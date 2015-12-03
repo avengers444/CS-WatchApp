@@ -1,0 +1,1394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0452332054D146DEB2D933AA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1A3F427AD249469C0D9D74 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0FD93CCE61104E5FA29EF812 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9212F488BF14C3296C8FA34 /* CoreVideo.framework */; };
+		0FF6D3ADB23A4B0B95EB6FD6 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F80D054811147E9A6CBF266 /* LocalAuthentication.framework */; };
+		11CE3D486A064A3FA800B92A /* AppleWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3736FCA5E49DD807C7B6D /* AppleWatch.m */; };
+		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
+		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
+		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
+		305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */; };
+		3088BBBD154F3926009F9C59 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3088BBB7154F3926009F9C59 /* Default-Landscape@2x~ipad.png */; };
+		3088BBBE154F3926009F9C59 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3088BBB8154F3926009F9C59 /* Default-Landscape~ipad.png */; };
+		3088BBBF154F3926009F9C59 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3088BBB9154F3926009F9C59 /* Default-Portrait@2x~ipad.png */; };
+		3088BBC0154F3926009F9C59 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3088BBBA154F3926009F9C59 /* Default-Portrait~ipad.png */; };
+		3088BBC1154F3926009F9C59 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3088BBBB154F3926009F9C59 /* Default@2x~iphone.png */; };
+		3088BBC2154F3926009F9C59 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3088BBBC154F3926009F9C59 /* Default~iphone.png */; };
+		308D05371370CCF300D202BF /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D052E1370CCF300D202BF /* icon-72.png */; };
+		308D05381370CCF300D202BF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D052F1370CCF300D202BF /* icon.png */; };
+		308D05391370CCF300D202BF /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D05301370CCF300D202BF /* icon@2x.png */; };
+		30B4F30019D5E07200D9F7D8 /* Default-667h.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B4F2FD19D5E07200D9F7D8 /* Default-667h.png */; };
+		30B4F30119D5E07200D9F7D8 /* Default-736h.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B4F2FE19D5E07200D9F7D8 /* Default-736h.png */; };
+		30B4F30219D5E07200D9F7D8 /* Default-Landscape-736h.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B4F2FF19D5E07200D9F7D8 /* Default-Landscape-736h.png */; };
+		30C1856619D5FC0A00212699 /* icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C1856519D5FC0A00212699 /* icon-60@3x.png */; };
+		30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FC414816E50CA1004E6F35 /* icon-72@2x.png */; };
+		35D28405D20E48FDB7E8CC13 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F93E5B9DA2F14A479A2A28F4 /* CDVNotification.bundle */; };
+		3B1B6C1B93504151ABCA763C /* MMWormholeSessionMessageTransiting.h in Sources */ = {isa = PBXBuildFile; fileRef = E042CB807CC04EFE8D497298 /* MMWormholeSessionMessageTransiting.h */; };
+		3BC54683F9434741AD35B5E4 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B04E864A57451C94212A0C /* libiconv.dylib */; };
+		3DA480FE4082460A992294DA /* MMWormholeFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 18835EDE9B424F0D8EED3C31 /* MMWormholeFileTransiting.m */; };
+		447BAFC6B655463E97D56DBC /* CDVBarcodeScanner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F568F6621149D1BD8D353A /* CDVBarcodeScanner.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4736FFBCAB0841F693D1B490 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D3A8087A7F4CA184600843 /* CDVSplashScreen.m */; };
+		4BAA6C66C0BF466CBB48CA08 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FB67E742CC4A46A804256F /* CDVLogger.m */; };
+		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
+		60516474EF604B64AE53D2AC /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D0D7467E3747F6B10C1714 /* CDVLocation.m */; };
+		64C3299940F4492BB6AC7F17 /* zxing-all-in-one.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D00A6510C66D49B59112B8AA /* zxing-all-in-one.cpp */; };
+		6BE602C9BD604E8AB8E1D806 /* MMWormholeSession.h in Sources */ = {isa = PBXBuildFile; fileRef = C149AC3383C54172825EB7FB /* MMWormholeSession.h */; };
+		6D3A364774EF4265AA1E435D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B06F8745D74F4D819A2F7E /* CoreLocation.framework */; };
+		6FC8120A06094FE1904E90A2 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA84354EDD44F52849264E5 /* CDVStatusBar.m */; };
+		73472A722EF1439588DFEA61 /* MMWormholeSessionContextTransiting.h in Sources */ = {isa = PBXBuildFile; fileRef = 442C3C58B68641ECB931927C /* MMWormholeSessionContextTransiting.h */; };
+		751CD36CE4A7465C9C8AB894 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B171E6DDBB0948BFBDF5B3BC /* AudioToolbox.framework */; };
+		771B539AD8604232ABBBB915 /* MMWormhole.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A3A5E4007473AAFD5E1A7 /* MMWormhole.m */; };
+		7E7966DE1810823500FA85AD /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D41810823500FA85AD /* icon-40.png */; };
+		7E7966DF1810823500FA85AD /* icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D51810823500FA85AD /* icon-40@2x.png */; };
+		7E7966E01810823500FA85AD /* icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D61810823500FA85AD /* icon-50.png */; };
+		7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D71810823500FA85AD /* icon-50@2x.png */; };
+		7E7966E21810823500FA85AD /* icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D81810823500FA85AD /* icon-60.png */; };
+		7E7966E31810823500FA85AD /* icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D91810823500FA85AD /* icon-60@2x.png */; };
+		7E7966E41810823500FA85AD /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DA1810823500FA85AD /* icon-76.png */; };
+		7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DB1810823500FA85AD /* icon-76@2x.png */; };
+		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
+		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
+		8D991449D2184F87B068B7D7 /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B97D34536A43F38E2976FA /* MMWormholeSessionMessageTransiting.m */; };
+		921CD87914B146FCB3A520EA /* MMWormholeSessionFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6623DCE4144AA985F94211 /* MMWormholeSessionFileTransiting.m */; };
+		94B464E94797413783DA1ADA /* MMWormholeSessionContextTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EEF8E870EA4B3898DE5298 /* MMWormholeSessionContextTransiting.m */; };
+		9C7DFA94853D4BE5BCDD2301 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9913B08D95774549BE271D85 /* CDVBarcodeScanner.bundle */; };
+		A3C33364639645BBA74DA440 /* MMWormholeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B0DE9498334357835EAFEA /* MMWormholeSession.m */; };
+		AC2D6417B7EA4176B16D4FF6 /* MMWormholeCoordinatedFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BA43D8C4A349E281FF1E3A /* MMWormholeCoordinatedFileTransiting.m */; };
+		B0FCAF3B4F2C4534B4C64BAA /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A3646FCFE4B77A7591081 /* TouchID.m */; };
+		B9EA828F2059441C8974448C /* MMWormholeSessionFileTransiting.h in Sources */ = {isa = PBXBuildFile; fileRef = ECAD66ED662C433D83C05513 /* MMWormholeSessionFileTransiting.h */; };
+		BBDB528DD80341E3861330FC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383A757BBBC45DC81859E60 /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BD035F4617D94BCC8AEA10C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23820F9F007243D0B223E2C7 /* Foundation.framework */; };
+		C92BA014388C4637B8E627C6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2C7B570EA145BCAA42D45C /* QuartzCore.framework */; };
+		CE1580111C0D65750034023D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15800F1C0D65750034023D /* Interface.storyboard */; };
+		CE1580131C0D65750034023D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1580121C0D65750034023D /* Assets.xcassets */; };
+		CE15801A1C0D65760034023D /* Coin Space WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE1580191C0D65750034023D /* Coin Space WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE1580221C0D65760034023D /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1580211C0D65760034023D /* InterfaceController.m */; };
+		CE1580251C0D65760034023D /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1580241C0D65760034023D /* ExtensionDelegate.m */; };
+		CE1580281C0D65760034023D /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1580271C0D65760034023D /* NotificationController.m */; };
+		CE15802B1C0D65760034023D /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15802A1C0D65760034023D /* GlanceController.m */; };
+		CE15802E1C0D65760034023D /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15802D1C0D65760034023D /* ComplicationController.m */; };
+		CE1580301C0D65760034023D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE15802F1C0D65760034023D /* Assets.xcassets */; };
+		CE1580341C0D65760034023D /* Coin Space WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE15800D1C0D65750034023D /* Coin Space WatchApp.app */; };
+		CE1580511C0D80E70034023D /* CommonData.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15803E1C0D80E70034023D /* CommonData.m */; };
+		CE1580521C0D80E70034023D /* InputsRow.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1580401C0D80E70034023D /* InputsRow.m */; };
+		CE1580531C0D80E70034023D /* OutputsRow.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1580421C0D80E70034023D /* OutputsRow.m */; };
+		CE1580541C0D80E70034023D /* PriceSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1580441C0D80E70034023D /* PriceSelectionController.m */; };
+		CE1580551C0D80E70034023D /* ReceiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1580461C0D80E70034023D /* ReceiveController.m */; };
+		CE1580561C0D80E70034023D /* SendController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1580481C0D80E70034023D /* SendController.m */; };
+		CE1580571C0D80E70034023D /* TokensController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15804A1C0D80E70034023D /* TokensController.m */; };
+		CE1580581C0D80E70034023D /* TransactionDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15804C1C0D80E70034023D /* TransactionDetailController.m */; };
+		CE1580591C0D80E70034023D /* TransactionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15804E1C0D80E70034023D /* TransactionsController.m */; };
+		CE15805A1C0D80E70034023D /* TransactionTableRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1580501C0D80E70034023D /* TransactionTableRowController.m */; };
+		CE15806C1C0D87060034023D /* MMWormhole.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A3A5E4007473AAFD5E1A7 /* MMWormhole.m */; };
+		CE15806D1C0D87060034023D /* MMWormholeCoordinatedFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BA43D8C4A349E281FF1E3A /* MMWormholeCoordinatedFileTransiting.m */; };
+		CE15806E1C0D87060034023D /* MMWormholeFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 18835EDE9B424F0D8EED3C31 /* MMWormholeFileTransiting.m */; };
+		CE15806F1C0D87060034023D /* MMWormholeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B0DE9498334357835EAFEA /* MMWormholeSession.m */; };
+		CE1580701C0D87060034023D /* MMWormholeSessionContextTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EEF8E870EA4B3898DE5298 /* MMWormholeSessionContextTransiting.m */; };
+		CE1580711C0D87060034023D /* MMWormholeSessionFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6623DCE4144AA985F94211 /* MMWormholeSessionFileTransiting.m */; };
+		CE1580721C0D87060034023D /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B97D34536A43F38E2976FA /* MMWormholeSessionMessageTransiting.m */; };
+		CE15807F1C0E0FD60034023D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE15807E1C0E0FD60034023D /* AVFoundation.framework */; };
+		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		DC3D2EFCBE28402FBA3566DB /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F00BD84BC444BA78AAB1EB2 /* scannerOverlay.xib */; };
+		E693788FBBB34928A5C0A41F /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FF0A12306B4EF4B241C394 /* SocialSharing.m */; };
+		ED4373CA5CF64720865134F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6D14128367406CAC4C42D5 /* Security.framework */; };
+		ED8831F6ABCD456894DF4FF0 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E1B6AC131E4EB3AB2B2AD3 /* CoreImage.framework */; };
+		F46BF17F01B84762B1753FE6 /* MMWormholeTransiting.h in Sources */ = {isa = PBXBuildFile; fileRef = E9F91A0436AB40A19A67E1F8 /* MMWormholeTransiting.h */; };
+		F47B20D3C79B41F4980F1C73 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B20C4A92AB46F298880E94 /* CDVViewController+SplashScreen.m */; };
+		F66E011956E24DE68CD5DF80 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0388C2A07F404564A475563E /* WatchConnectivity.framework */; };
+		F81AA4EB0E4B4DCAAC33B8C0 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FF753315E4C79A49E2DB2 /* CDVNotification.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		301BF534109A57CC0062928A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = CordovaLib;
+		};
+		301BF550109A68C00062928A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CordovaLib;
+		};
+		CE15801B1C0D65760034023D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE1580181C0D65750034023D;
+			remoteInfo = "Coin Space WatchApp Extension";
+		};
+		CE1580321C0D65760034023D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE15800C1C0D65750034023D;
+			remoteInfo = "Coin Space WatchApp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE15803A1C0D65760034023D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CE15801A1C0D65760034023D /* Coin Space WatchApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE15803C1C0D65760034023D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CE1580341C0D65760034023D /* Coin Space WatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00C0AEC550384061AA1B8CCF /* TouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchID.h; path = "cordova-plugin-touch-id/TouchID.h"; sourceTree = "<group>"; };
+		01E85AA8CECD494EA0ADF03E /* MMWormholeFileTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMWormholeFileTransiting.h; path = "cordova-plugin-apple-watch/MMWormholeFileTransiting.h"; sourceTree = "<group>"; };
+		0388C2A07F404564A475563E /* WatchConnectivity.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		07EEF8E870EA4B3898DE5298 /* MMWormholeSessionContextTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMWormholeSessionContextTransiting.m; path = "cordova-plugin-apple-watch/MMWormholeSessionContextTransiting.m"; sourceTree = "<group>"; };
+		0E6623DCE4144AA985F94211 /* MMWormholeSessionFileTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMWormholeSessionFileTransiting.m; path = "cordova-plugin-apple-watch/MMWormholeSessionFileTransiting.m"; sourceTree = "<group>"; };
+		16D0D7467E3747F6B10C1714 /* CDVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocation.m; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; };
+		18835EDE9B424F0D8EED3C31 /* MMWormholeFileTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMWormholeFileTransiting.m; path = "cordova-plugin-apple-watch/MMWormholeFileTransiting.m"; sourceTree = "<group>"; };
+		1C4A3A5E4007473AAFD5E1A7 /* MMWormhole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMWormhole.m; path = "cordova-plugin-apple-watch/MMWormhole.m"; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* CoinSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6A8A9C4AEB48B2909FFBE6 /* SocialSharing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialSharing.h; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; };
+		23820F9F007243D0B223E2C7 /* Foundation.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
+		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
+		302D95EE14D2391D003F00A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		302D95EF14D2391D003F00A1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		302D95F014D2391D003F00A1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3088BBB7154F3926009F9C59 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		3088BBB8154F3926009F9C59 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		3088BBB9154F3926009F9C59 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		3088BBBA154F3926009F9C59 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		3088BBBB154F3926009F9C59 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
+		3088BBBC154F3926009F9C59 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		308D052E1370CCF300D202BF /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		308D052F1370CCF300D202BF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		308D05301370CCF300D202BF /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		30B4F2FD19D5E07200D9F7D8 /* Default-667h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h.png"; sourceTree = "<group>"; };
+		30B4F2FE19D5E07200D9F7D8 /* Default-736h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h.png"; sourceTree = "<group>"; };
+		30B4F2FF19D5E07200D9F7D8 /* Default-Landscape-736h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape-736h.png"; sourceTree = "<group>"; };
+		30C1856519D5FC0A00212699 /* icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@3x.png"; sourceTree = "<group>"; };
+		30FC414816E50CA1004E6F35 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* CoinSpace-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoinSpace-Prefix.pch"; sourceTree = "<group>"; };
+		37EA38D9FE7C42008F66395C /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; };
+		42D3A8087A7F4CA184600843 /* CDVSplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; };
+		442C3C58B68641ECB931927C /* MMWormholeSessionContextTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMWormholeSessionContextTransiting.h; path = "cordova-plugin-apple-watch/MMWormholeSessionContextTransiting.h"; sourceTree = "<group>"; };
+		494669AC61944318A5FBC3E7 /* CDVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLocation.h; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; };
+		4B5FF753315E4C79A49E2DB2 /* CDVNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVNotification.m; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; };
+		4E8863CCBED945C888C5A40B /* CDVStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = org.apache.cordova.statusbar/CDVStatusBar.h; sourceTree = "<group>"; };
+		4F00BD84BC444BA78AAB1EB2 /* scannerOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = scannerOverlay.xib; sourceTree = "<group>"; };
+		57BA43D8C4A349E281FF1E3A /* MMWormholeCoordinatedFileTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMWormholeCoordinatedFileTransiting.m; path = "cordova-plugin-apple-watch/MMWormholeCoordinatedFileTransiting.m"; sourceTree = "<group>"; };
+		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		5B9A3646FCFE4B77A7591081 /* TouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchID.m; path = "cordova-plugin-touch-id/TouchID.m"; sourceTree = "<group>"; };
+		67FB67E742CC4A46A804256F /* CDVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; };
+		6CA84354EDD44F52849264E5 /* CDVStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = org.apache.cordova.statusbar/CDVStatusBar.m; sourceTree = "<group>"; };
+		6F80D054811147E9A6CBF266 /* LocalAuthentication.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		73B06F8745D74F4D819A2F7E /* CoreLocation.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		75445E4726F44506BB72F953 /* CDVSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; };
+		7E277365EAF8454AB9A3ECE2 /* CDVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
+		7E7966D41810823500FA85AD /* icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40.png"; sourceTree = "<group>"; };
+		7E7966D51810823500FA85AD /* icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40@2x.png"; sourceTree = "<group>"; };
+		7E7966D61810823500FA85AD /* icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-50.png"; sourceTree = "<group>"; };
+		7E7966D71810823500FA85AD /* icon-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-50@2x.png"; sourceTree = "<group>"; };
+		7E7966D81810823500FA85AD /* icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60.png"; sourceTree = "<group>"; };
+		7E7966D91810823500FA85AD /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2x.png"; sourceTree = "<group>"; };
+		7E7966DA1810823500FA85AD /* icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76.png"; sourceTree = "<group>"; };
+		7E7966DB1810823500FA85AD /* icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76@2x.png"; sourceTree = "<group>"; };
+		7E7966DC1810823500FA85AD /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small.png"; sourceTree = "<group>"; };
+		7E7966DD1810823500FA85AD /* icon-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small@2x.png"; sourceTree = "<group>"; };
+		84F568F6621149D1BD8D353A /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = CDVBarcodeScanner.mm; path = com.phonegap.plugins.barcodescanner/CDVBarcodeScanner.mm; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* CoinSpace-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "CoinSpace-Info.plist"; path = "../CoinSpace-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		97F40BF0CD2E44F78BD2E260 /* MMWormhole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMWormhole.h; path = "cordova-plugin-apple-watch/MMWormhole.h"; sourceTree = "<group>"; };
+		9913B08D95774549BE271D85 /* CDVBarcodeScanner.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CDVBarcodeScanner.bundle; sourceTree = "<group>"; };
+		9A5A6824F77A4CE89A0B5F74 /* MMWormholeCoordinatedFileTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMWormholeCoordinatedFileTransiting.h; path = "cordova-plugin-apple-watch/MMWormholeCoordinatedFileTransiting.h"; sourceTree = "<group>"; };
+		9DF3736FCA5E49DD807C7B6D /* AppleWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleWatch.m; path = "cordova-plugin-apple-watch/AppleWatch.m"; sourceTree = "<group>"; };
+		AB647ACE26BC48D6ACFCCAC4 /* zxing-all-in-one.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "zxing-all-in-one.h"; path = "com.phonegap.plugins.barcodescanner/zxing-all-in-one.h"; sourceTree = "<group>"; };
+		B0B0DE9498334357835EAFEA /* MMWormholeSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMWormholeSession.m; path = "cordova-plugin-apple-watch/MMWormholeSession.m"; sourceTree = "<group>"; };
+		B171E6DDBB0948BFBDF5B3BC /* AudioToolbox.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BAD343466F93455A8E7A11F7 /* AppleWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleWatch.h; path = "cordova-plugin-apple-watch/AppleWatch.h"; sourceTree = "<group>"; };
+		BB2C7B570EA145BCAA42D45C /* QuartzCore.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BD1A3F427AD249469C0D9D74 /* Social.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		C149AC3383C54172825EB7FB /* MMWormholeSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMWormholeSession.h; path = "cordova-plugin-apple-watch/MMWormholeSession.h"; sourceTree = "<group>"; };
+		C4B04E864A57451C94212A0C /* libiconv.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		CD6D14128367406CAC4C42D5 /* Security.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CE15800D1C0D65750034023D /* Coin Space WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coin Space WatchApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1580101C0D65750034023D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		CE1580121C0D65750034023D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE1580141C0D65750034023D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE1580191C0D65750034023D /* Coin Space WatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Coin Space WatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE15801F1C0D65760034023D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		CE1580201C0D65760034023D /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		CE1580211C0D65760034023D /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		CE1580231C0D65760034023D /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		CE1580241C0D65760034023D /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		CE1580261C0D65760034023D /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		CE1580271C0D65760034023D /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		CE1580291C0D65760034023D /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		CE15802A1C0D65760034023D /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		CE15802C1C0D65760034023D /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
+		CE15802D1C0D65760034023D /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
+		CE15802F1C0D65760034023D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE1580311C0D65760034023D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE15803D1C0D80E70034023D /* CommonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonData.h; sourceTree = "<group>"; };
+		CE15803E1C0D80E70034023D /* CommonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonData.m; sourceTree = "<group>"; };
+		CE15803F1C0D80E70034023D /* InputsRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputsRow.h; sourceTree = "<group>"; };
+		CE1580401C0D80E70034023D /* InputsRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputsRow.m; sourceTree = "<group>"; };
+		CE1580411C0D80E70034023D /* OutputsRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputsRow.h; sourceTree = "<group>"; };
+		CE1580421C0D80E70034023D /* OutputsRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputsRow.m; sourceTree = "<group>"; };
+		CE1580431C0D80E70034023D /* PriceSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceSelectionController.h; sourceTree = "<group>"; };
+		CE1580441C0D80E70034023D /* PriceSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceSelectionController.m; sourceTree = "<group>"; };
+		CE1580451C0D80E70034023D /* ReceiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveController.h; sourceTree = "<group>"; };
+		CE1580461C0D80E70034023D /* ReceiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveController.m; sourceTree = "<group>"; };
+		CE1580471C0D80E70034023D /* SendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendController.h; sourceTree = "<group>"; };
+		CE1580481C0D80E70034023D /* SendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendController.m; sourceTree = "<group>"; };
+		CE1580491C0D80E70034023D /* TokensController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokensController.h; sourceTree = "<group>"; };
+		CE15804A1C0D80E70034023D /* TokensController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokensController.m; sourceTree = "<group>"; };
+		CE15804B1C0D80E70034023D /* TransactionDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionDetailController.h; sourceTree = "<group>"; };
+		CE15804C1C0D80E70034023D /* TransactionDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionDetailController.m; sourceTree = "<group>"; };
+		CE15804D1C0D80E70034023D /* TransactionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionsController.h; sourceTree = "<group>"; };
+		CE15804E1C0D80E70034023D /* TransactionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionsController.m; sourceTree = "<group>"; };
+		CE15804F1C0D80E70034023D /* TransactionTableRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionTableRowController.h; sourceTree = "<group>"; };
+		CE1580501C0D80E70034023D /* TransactionTableRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionTableRowController.m; sourceTree = "<group>"; };
+		CE15805C1C0D81DF0034023D /* CoinSpace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = CoinSpace.entitlements; path = CoinSpace/CoinSpace.entitlements; sourceTree = "<group>"; };
+		CE15805D1C0D82140034023D /* Coin Space WatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Coin Space WatchApp.entitlements"; sourceTree = "<group>"; };
+		CE15805E1C0D82360034023D /* Coin Space WatchApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Coin Space WatchApp Extension.entitlements"; sourceTree = "<group>"; };
+		CE1580731C0E0AB80034023D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CE15807E1C0E0FD60034023D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D00A6510C66D49B59112B8AA /* zxing-all-in-one.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = "zxing-all-in-one.cpp"; path = "com.phonegap.plugins.barcodescanner/zxing-all-in-one.cpp"; sourceTree = "<group>"; };
+		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
+		E042CB807CC04EFE8D497298 /* MMWormholeSessionMessageTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMWormholeSessionMessageTransiting.h; path = "cordova-plugin-apple-watch/MMWormholeSessionMessageTransiting.h"; sourceTree = "<group>"; };
+		E383A757BBBC45DC81859E60 /* MessageUI.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E9212F488BF14C3296C8FA34 /* CoreVideo.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		E9F91A0436AB40A19A67E1F8 /* MMWormholeTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMWormholeTransiting.h; path = "cordova-plugin-apple-watch/MMWormholeTransiting.h"; sourceTree = "<group>"; };
+		EB87FDF21871DA7A0020F90C /* merges */ = {isa = PBXFileReference; lastKnownFileType = folder; name = merges; path = ../../merges; sourceTree = "<group>"; };
+		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
+		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
+		ECAD66ED662C433D83C05513 /* MMWormholeSessionFileTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMWormholeSessionFileTransiting.h; path = "cordova-plugin-apple-watch/MMWormholeSessionFileTransiting.h"; sourceTree = "<group>"; };
+		EEB7920B8E4E4960A2544FC2 /* CDVNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVNotification.h; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; };
+		F1B97D34536A43F38E2976FA /* MMWormholeSessionMessageTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMWormholeSessionMessageTransiting.m; path = "cordova-plugin-apple-watch/MMWormholeSessionMessageTransiting.m"; sourceTree = "<group>"; };
+		F1E1B6AC131E4EB3AB2B2AD3 /* CoreImage.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		F3FF0A12306B4EF4B241C394 /* SocialSharing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialSharing.m; path = "cordova-plugin-x-socialsharing/SocialSharing.m"; sourceTree = "<group>"; };
+		F4B20C4A92AB46F298880E94 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; };
+		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = CoinSpace/config.xml; sourceTree = "<group>"; };
+		F93E5B9DA2F14A479A2A28F4 /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CDVNotification.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE15807F1C0E0FD60034023D /* AVFoundation.framework in Frameworks */,
+				5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */,
+				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				6D3A364774EF4265AA1E435D /* CoreLocation.framework in Frameworks */,
+				3BC54683F9434741AD35B5E4 /* libiconv.dylib in Frameworks */,
+				0FD93CCE61104E5FA29EF812 /* CoreVideo.framework in Frameworks */,
+				C92BA014388C4637B8E627C6 /* QuartzCore.framework in Frameworks */,
+				ED8831F6ABCD456894DF4FF0 /* CoreImage.framework in Frameworks */,
+				751CD36CE4A7465C9C8AB894 /* AudioToolbox.framework in Frameworks */,
+				BD035F4617D94BCC8AEA10C0 /* Foundation.framework in Frameworks */,
+				F66E011956E24DE68CD5DF80 /* WatchConnectivity.framework in Frameworks */,
+				0452332054D146DEB2D933AA /* Social.framework in Frameworks */,
+				BBDB528DD80341E3861330FC /* MessageUI.framework in Frameworks */,
+				0FF6D3ADB23A4B0B95EB6FD6 /* LocalAuthentication.framework in Frameworks */,
+				ED4373CA5CF64720865134F3 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1580161C0D65750034023D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				302D95EE14D2391D003F00A1 /* MainViewController.h */,
+				302D95EF14D2391D003F00A1 /* MainViewController.m */,
+				302D95F014D2391D003F00A1 /* MainViewController.xib */,
+				1D3623240D0F684500981E51 /* AppDelegate.h */,
+				1D3623250D0F684500981E51 /* AppDelegate.m */,
+			);
+			name = Classes;
+			path = CoinSpace/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* CoinSpace.app */,
+				CE15800D1C0D65750034023D /* Coin Space WatchApp.app */,
+				CE1580191C0D65750034023D /* Coin Space WatchApp Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				CE15805C1C0D81DF0034023D /* CoinSpace.entitlements */,
+				EB87FDF41871DAF40020F90C /* config.xml */,
+				EB87FDF31871DA8E0020F90C /* www */,
+				EB87FDF21871DA7A0020F90C /* merges */,
+				EB87FDF11871DA420020F90C /* Staging */,
+				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				307C750510C5A3420062BCA9 /* Plugins */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				CE15800E1C0D65750034023D /* Coin Space WatchApp */,
+				CE15801D1C0D65760034023D /* Coin Space WatchApp Extension */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* CoinSpace-Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			path = CoinSpace;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				308D052D1370CCF300D202BF /* icons */,
+				308D05311370CCF300D202BF /* splash */,
+				8D1107310486CEB800E47090 /* CoinSpace-Info.plist */,
+				4F00BD84BC444BA78AAB1EB2 /* scannerOverlay.xib */,
+				9913B08D95774549BE271D85 /* CDVBarcodeScanner.bundle */,
+				F93E5B9DA2F14A479A2A28F4 /* CDVNotification.bundle */,
+			);
+			name = Resources;
+			path = CoinSpace/Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE15807E1C0E0FD60034023D /* AVFoundation.framework */,
+				CE1580731C0E0AB80034023D /* Foundation.framework */,
+				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				73B06F8745D74F4D819A2F7E /* CoreLocation.framework */,
+				C4B04E864A57451C94212A0C /* libiconv.dylib */,
+				E9212F488BF14C3296C8FA34 /* CoreVideo.framework */,
+				BB2C7B570EA145BCAA42D45C /* QuartzCore.framework */,
+				F1E1B6AC131E4EB3AB2B2AD3 /* CoreImage.framework */,
+				B171E6DDBB0948BFBDF5B3BC /* AudioToolbox.framework */,
+				23820F9F007243D0B223E2C7 /* Foundation.framework */,
+				0388C2A07F404564A475563E /* WatchConnectivity.framework */,
+				BD1A3F427AD249469C0D9D74 /* Social.framework */,
+				E383A757BBBC45DC81859E60 /* MessageUI.framework */,
+				6F80D054811147E9A6CBF266 /* LocalAuthentication.framework */,
+				CD6D14128367406CAC4C42D5 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		301BF52E109A57CC0062928A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				301BF535109A57CC0062928A /* libCordova.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		307C750510C5A3420062BCA9 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				16D0D7467E3747F6B10C1714 /* CDVLocation.m */,
+				494669AC61944318A5FBC3E7 /* CDVLocation.h */,
+				42D3A8087A7F4CA184600843 /* CDVSplashScreen.m */,
+				F4B20C4A92AB46F298880E94 /* CDVViewController+SplashScreen.m */,
+				75445E4726F44506BB72F953 /* CDVSplashScreen.h */,
+				37EA38D9FE7C42008F66395C /* CDVViewController+SplashScreen.h */,
+				84F568F6621149D1BD8D353A /* CDVBarcodeScanner.mm */,
+				D00A6510C66D49B59112B8AA /* zxing-all-in-one.cpp */,
+				AB647ACE26BC48D6ACFCCAC4 /* zxing-all-in-one.h */,
+				4B5FF753315E4C79A49E2DB2 /* CDVNotification.m */,
+				EEB7920B8E4E4960A2544FC2 /* CDVNotification.h */,
+				9DF3736FCA5E49DD807C7B6D /* AppleWatch.m */,
+				1C4A3A5E4007473AAFD5E1A7 /* MMWormhole.m */,
+				57BA43D8C4A349E281FF1E3A /* MMWormholeCoordinatedFileTransiting.m */,
+				18835EDE9B424F0D8EED3C31 /* MMWormholeFileTransiting.m */,
+				C149AC3383C54172825EB7FB /* MMWormholeSession.h */,
+				B0B0DE9498334357835EAFEA /* MMWormholeSession.m */,
+				442C3C58B68641ECB931927C /* MMWormholeSessionContextTransiting.h */,
+				07EEF8E870EA4B3898DE5298 /* MMWormholeSessionContextTransiting.m */,
+				ECAD66ED662C433D83C05513 /* MMWormholeSessionFileTransiting.h */,
+				0E6623DCE4144AA985F94211 /* MMWormholeSessionFileTransiting.m */,
+				E042CB807CC04EFE8D497298 /* MMWormholeSessionMessageTransiting.h */,
+				F1B97D34536A43F38E2976FA /* MMWormholeSessionMessageTransiting.m */,
+				E9F91A0436AB40A19A67E1F8 /* MMWormholeTransiting.h */,
+				BAD343466F93455A8E7A11F7 /* AppleWatch.h */,
+				97F40BF0CD2E44F78BD2E260 /* MMWormhole.h */,
+				9A5A6824F77A4CE89A0B5F74 /* MMWormholeCoordinatedFileTransiting.h */,
+				01E85AA8CECD494EA0ADF03E /* MMWormholeFileTransiting.h */,
+				6CA84354EDD44F52849264E5 /* CDVStatusBar.m */,
+				4E8863CCBED945C888C5A40B /* CDVStatusBar.h */,
+				F3FF0A12306B4EF4B241C394 /* SocialSharing.m */,
+				1F6A8A9C4AEB48B2909FFBE6 /* SocialSharing.h */,
+				5B9A3646FCFE4B77A7591081 /* TouchID.m */,
+				00C0AEC550384061AA1B8CCF /* TouchID.h */,
+				67FB67E742CC4A46A804256F /* CDVLogger.m */,
+				7E277365EAF8454AB9A3ECE2 /* CDVLogger.h */,
+			);
+			name = Plugins;
+			path = CoinSpace/Plugins;
+			sourceTree = SOURCE_ROOT;
+		};
+		308D052D1370CCF300D202BF /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				30C1856519D5FC0A00212699 /* icon-60@3x.png */,
+				7E7966D41810823500FA85AD /* icon-40.png */,
+				7E7966D51810823500FA85AD /* icon-40@2x.png */,
+				7E7966D61810823500FA85AD /* icon-50.png */,
+				7E7966D71810823500FA85AD /* icon-50@2x.png */,
+				7E7966D81810823500FA85AD /* icon-60.png */,
+				7E7966D91810823500FA85AD /* icon-60@2x.png */,
+				7E7966DA1810823500FA85AD /* icon-76.png */,
+				7E7966DB1810823500FA85AD /* icon-76@2x.png */,
+				7E7966DC1810823500FA85AD /* icon-small.png */,
+				7E7966DD1810823500FA85AD /* icon-small@2x.png */,
+				30FC414816E50CA1004E6F35 /* icon-72@2x.png */,
+				308D052E1370CCF300D202BF /* icon-72.png */,
+				308D052F1370CCF300D202BF /* icon.png */,
+				308D05301370CCF300D202BF /* icon@2x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		308D05311370CCF300D202BF /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				30B4F2FD19D5E07200D9F7D8 /* Default-667h.png */,
+				30B4F2FE19D5E07200D9F7D8 /* Default-736h.png */,
+				30B4F2FF19D5E07200D9F7D8 /* Default-Landscape-736h.png */,
+				D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */,
+				3088BBB7154F3926009F9C59 /* Default-Landscape@2x~ipad.png */,
+				3088BBB8154F3926009F9C59 /* Default-Landscape~ipad.png */,
+				3088BBB9154F3926009F9C59 /* Default-Portrait@2x~ipad.png */,
+				3088BBBA154F3926009F9C59 /* Default-Portrait~ipad.png */,
+				3088BBBB154F3926009F9C59 /* Default@2x~iphone.png */,
+				3088BBBC154F3926009F9C59 /* Default~iphone.png */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
+		CE15800E1C0D65750034023D /* Coin Space WatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				CE15805D1C0D82140034023D /* Coin Space WatchApp.entitlements */,
+				CE15800F1C0D65750034023D /* Interface.storyboard */,
+				CE1580121C0D65750034023D /* Assets.xcassets */,
+				CE1580141C0D65750034023D /* Info.plist */,
+			);
+			path = "Coin Space WatchApp";
+			sourceTree = "<group>";
+		};
+		CE15801D1C0D65760034023D /* Coin Space WatchApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CE15805E1C0D82360034023D /* Coin Space WatchApp Extension.entitlements */,
+				CE15805B1C0D80ED0034023D /* Helpers */,
+				CE1580601C0D82880034023D /* PriceSelectionController */,
+				CE15805F1C0D82790034023D /* ReceiveController */,
+				CE1580611C0D82970034023D /* SendController */,
+				CE1580621C0D829F0034023D /* TokensController */,
+				CE1580631C0D82C30034023D /* TransactionsController */,
+				CE1580681C0D83E90034023D /* InterfaceController */,
+				CE1580231C0D65760034023D /* ExtensionDelegate.h */,
+				CE1580241C0D65760034023D /* ExtensionDelegate.m */,
+				CE1580691C0D83F20034023D /* NotificationController */,
+				CE15806A1C0D83FB0034023D /* GlanceController */,
+				CE15806B1C0D84030034023D /* ComplicationController */,
+				CE15802F1C0D65760034023D /* Assets.xcassets */,
+				CE1580311C0D65760034023D /* Info.plist */,
+				CE15801E1C0D65760034023D /* Supporting Files */,
+			);
+			path = "Coin Space WatchApp Extension";
+			sourceTree = "<group>";
+		};
+		CE15801E1C0D65760034023D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE15801F1C0D65760034023D /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE15805B1C0D80ED0034023D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE15803D1C0D80E70034023D /* CommonData.h */,
+				CE15803E1C0D80E70034023D /* CommonData.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		CE15805F1C0D82790034023D /* ReceiveController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580451C0D80E70034023D /* ReceiveController.h */,
+				CE1580461C0D80E70034023D /* ReceiveController.m */,
+			);
+			name = ReceiveController;
+			sourceTree = "<group>";
+		};
+		CE1580601C0D82880034023D /* PriceSelectionController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580431C0D80E70034023D /* PriceSelectionController.h */,
+				CE1580441C0D80E70034023D /* PriceSelectionController.m */,
+			);
+			name = PriceSelectionController;
+			sourceTree = "<group>";
+		};
+		CE1580611C0D82970034023D /* SendController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580471C0D80E70034023D /* SendController.h */,
+				CE1580481C0D80E70034023D /* SendController.m */,
+			);
+			name = SendController;
+			sourceTree = "<group>";
+		};
+		CE1580621C0D829F0034023D /* TokensController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580491C0D80E70034023D /* TokensController.h */,
+				CE15804A1C0D80E70034023D /* TokensController.m */,
+			);
+			name = TokensController;
+			sourceTree = "<group>";
+		};
+		CE1580631C0D82C30034023D /* TransactionsController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580651C0D83960034023D /* TransactionDetailController */,
+				CE1580641C0D82D90034023D /* TransactionRow */,
+				CE15804D1C0D80E70034023D /* TransactionsController.h */,
+				CE15804E1C0D80E70034023D /* TransactionsController.m */,
+			);
+			name = TransactionsController;
+			sourceTree = "<group>";
+		};
+		CE1580641C0D82D90034023D /* TransactionRow */ = {
+			isa = PBXGroup;
+			children = (
+				CE15804F1C0D80E70034023D /* TransactionTableRowController.h */,
+				CE1580501C0D80E70034023D /* TransactionTableRowController.m */,
+			);
+			name = TransactionRow;
+			sourceTree = "<group>";
+		};
+		CE1580651C0D83960034023D /* TransactionDetailController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580661C0D83A60034023D /* InputsRow */,
+				CE1580671C0D83AD0034023D /* OutputsRow */,
+				CE15804B1C0D80E70034023D /* TransactionDetailController.h */,
+				CE15804C1C0D80E70034023D /* TransactionDetailController.m */,
+			);
+			name = TransactionDetailController;
+			sourceTree = "<group>";
+		};
+		CE1580661C0D83A60034023D /* InputsRow */ = {
+			isa = PBXGroup;
+			children = (
+				CE15803F1C0D80E70034023D /* InputsRow.h */,
+				CE1580401C0D80E70034023D /* InputsRow.m */,
+			);
+			name = InputsRow;
+			sourceTree = "<group>";
+		};
+		CE1580671C0D83AD0034023D /* OutputsRow */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580411C0D80E70034023D /* OutputsRow.h */,
+				CE1580421C0D80E70034023D /* OutputsRow.m */,
+			);
+			name = OutputsRow;
+			sourceTree = "<group>";
+		};
+		CE1580681C0D83E90034023D /* InterfaceController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580201C0D65760034023D /* InterfaceController.h */,
+				CE1580211C0D65760034023D /* InterfaceController.m */,
+			);
+			name = InterfaceController;
+			sourceTree = "<group>";
+		};
+		CE1580691C0D83F20034023D /* NotificationController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580261C0D65760034023D /* NotificationController.h */,
+				CE1580271C0D65760034023D /* NotificationController.m */,
+			);
+			name = NotificationController;
+			sourceTree = "<group>";
+		};
+		CE15806A1C0D83FB0034023D /* GlanceController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1580291C0D65760034023D /* GlanceController.h */,
+				CE15802A1C0D65760034023D /* GlanceController.m */,
+			);
+			name = GlanceController;
+			sourceTree = "<group>";
+		};
+		CE15806B1C0D84030034023D /* ComplicationController */ = {
+			isa = PBXGroup;
+			children = (
+				CE15802C1C0D65760034023D /* ComplicationController.h */,
+				CE15802D1C0D65760034023D /* ComplicationController.m */,
+			);
+			name = ComplicationController;
+			sourceTree = "<group>";
+		};
+		EB87FDF11871DA420020F90C /* Staging */ = {
+			isa = PBXGroup;
+			children = (
+				F840E1F0165FE0F500CFE078 /* config.xml */,
+				301BF56E109A69640062928A /* www */,
+			);
+			name = Staging;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* CoinSpace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CoinSpace" */;
+			buildPhases = (
+				304B58A110DAC018002A0835 /* Copy www directory */,
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				CE15803C1C0D65760034023D /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				301BF551109A68C00062928A /* PBXTargetDependency */,
+				CE1580331C0D65760034023D /* PBXTargetDependency */,
+			);
+			name = CoinSpace;
+			productName = CoinSpace;
+			productReference = 1D6058910D05DD3D006BFB54 /* CoinSpace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE15800C1C0D65750034023D /* Coin Space WatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE15803B1C0D65760034023D /* Build configuration list for PBXNativeTarget "Coin Space WatchApp" */;
+			buildPhases = (
+				CE15800B1C0D65750034023D /* Resources */,
+				CE15803A1C0D65760034023D /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE15801C1C0D65760034023D /* PBXTargetDependency */,
+			);
+			name = "Coin Space WatchApp";
+			productName = "Coin Space WatchApp";
+			productReference = CE15800D1C0D65750034023D /* Coin Space WatchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CE1580181C0D65750034023D /* Coin Space WatchApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE1580391C0D65760034023D /* Build configuration list for PBXNativeTarget "Coin Space WatchApp Extension" */;
+			buildPhases = (
+				CE1580151C0D65750034023D /* Sources */,
+				CE1580161C0D65750034023D /* Frameworks */,
+				CE1580171C0D65750034023D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Coin Space WatchApp Extension";
+			productName = "Coin Space WatchApp Extension";
+			productReference = CE1580191C0D65750034023D /* Coin Space WatchApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 510;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 83466P3ZDA;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					CE15800C1C0D65750034023D = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 83466P3ZDA;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					CE1580181C0D65750034023D = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 83466P3ZDA;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CoinSpace" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+				es,
+				de,
+				se,
+				Base,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 301BF52E109A57CC0062928A /* Products */;
+					ProjectRef = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* CoinSpace */,
+				CE15800C1C0D65750034023D /* Coin Space WatchApp */,
+				CE1580181C0D65750034023D /* Coin Space WatchApp Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		301BF535109A57CC0062928A /* libCordova.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCordova.a;
+			remoteRef = 301BF534109A57CC0062928A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E7966E41810823500FA85AD /* icon-76.png in Resources */,
+				7E7966DF1810823500FA85AD /* icon-40@2x.png in Resources */,
+				308D05371370CCF300D202BF /* icon-72.png in Resources */,
+				30B4F30119D5E07200D9F7D8 /* Default-736h.png in Resources */,
+				308D05381370CCF300D202BF /* icon.png in Resources */,
+				308D05391370CCF300D202BF /* icon@2x.png in Resources */,
+				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
+				7E7966E01810823500FA85AD /* icon-50.png in Resources */,
+				7E7966E31810823500FA85AD /* icon-60@2x.png in Resources */,
+				7E7966E61810823500FA85AD /* icon-small.png in Resources */,
+				3088BBBD154F3926009F9C59 /* Default-Landscape@2x~ipad.png in Resources */,
+				3088BBBE154F3926009F9C59 /* Default-Landscape~ipad.png in Resources */,
+				3088BBBF154F3926009F9C59 /* Default-Portrait@2x~ipad.png in Resources */,
+				7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */,
+				3088BBC0154F3926009F9C59 /* Default-Portrait~ipad.png in Resources */,
+				30B4F30019D5E07200D9F7D8 /* Default-667h.png in Resources */,
+				7E7966DE1810823500FA85AD /* icon-40.png in Resources */,
+				3088BBC1154F3926009F9C59 /* Default@2x~iphone.png in Resources */,
+				7E7966E21810823500FA85AD /* icon-60.png in Resources */,
+				3088BBC2154F3926009F9C59 /* Default~iphone.png in Resources */,
+				D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */,
+				30B4F30219D5E07200D9F7D8 /* Default-Landscape-736h.png in Resources */,
+				30C1856619D5FC0A00212699 /* icon-60@3x.png in Resources */,
+				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
+				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
+				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
+				DC3D2EFCBE28402FBA3566DB /* scannerOverlay.xib in Resources */,
+				9C7DFA94853D4BE5BCDD2301 /* CDVBarcodeScanner.bundle in Resources */,
+				35D28405D20E48FDB7E8CC13 /* CDVNotification.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE15800B1C0D65750034023D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1580131C0D65750034023D /* Assets.xcassets in Resources */,
+				CE1580111C0D65750034023D /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1580171C0D65750034023D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1580301C0D65760034023D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		304B58A110DAC018002A0835 /* Copy www directory */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy www directory";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cordova/lib/copy-www-build-step.sh";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
+				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				60516474EF604B64AE53D2AC /* CDVLocation.m in Sources */,
+				4736FFBCAB0841F693D1B490 /* CDVSplashScreen.m in Sources */,
+				F47B20D3C79B41F4980F1C73 /* CDVViewController+SplashScreen.m in Sources */,
+				447BAFC6B655463E97D56DBC /* CDVBarcodeScanner.mm in Sources */,
+				64C3299940F4492BB6AC7F17 /* zxing-all-in-one.cpp in Sources */,
+				F81AA4EB0E4B4DCAAC33B8C0 /* CDVNotification.m in Sources */,
+				11CE3D486A064A3FA800B92A /* AppleWatch.m in Sources */,
+				771B539AD8604232ABBBB915 /* MMWormhole.m in Sources */,
+				AC2D6417B7EA4176B16D4FF6 /* MMWormholeCoordinatedFileTransiting.m in Sources */,
+				3DA480FE4082460A992294DA /* MMWormholeFileTransiting.m in Sources */,
+				6BE602C9BD604E8AB8E1D806 /* MMWormholeSession.h in Sources */,
+				A3C33364639645BBA74DA440 /* MMWormholeSession.m in Sources */,
+				73472A722EF1439588DFEA61 /* MMWormholeSessionContextTransiting.h in Sources */,
+				94B464E94797413783DA1ADA /* MMWormholeSessionContextTransiting.m in Sources */,
+				B9EA828F2059441C8974448C /* MMWormholeSessionFileTransiting.h in Sources */,
+				921CD87914B146FCB3A520EA /* MMWormholeSessionFileTransiting.m in Sources */,
+				3B1B6C1B93504151ABCA763C /* MMWormholeSessionMessageTransiting.h in Sources */,
+				8D991449D2184F87B068B7D7 /* MMWormholeSessionMessageTransiting.m in Sources */,
+				F46BF17F01B84762B1753FE6 /* MMWormholeTransiting.h in Sources */,
+				6FC8120A06094FE1904E90A2 /* CDVStatusBar.m in Sources */,
+				E693788FBBB34928A5C0A41F /* SocialSharing.m in Sources */,
+				B0FCAF3B4F2C4534B4C64BAA /* TouchID.m in Sources */,
+				4BAA6C66C0BF466CBB48CA08 /* CDVLogger.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1580151C0D65750034023D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE15806C1C0D87060034023D /* MMWormhole.m in Sources */,
+				CE15806D1C0D87060034023D /* MMWormholeCoordinatedFileTransiting.m in Sources */,
+				CE15806E1C0D87060034023D /* MMWormholeFileTransiting.m in Sources */,
+				CE15806F1C0D87060034023D /* MMWormholeSession.m in Sources */,
+				CE1580701C0D87060034023D /* MMWormholeSessionContextTransiting.m in Sources */,
+				CE1580711C0D87060034023D /* MMWormholeSessionFileTransiting.m in Sources */,
+				CE1580721C0D87060034023D /* MMWormholeSessionMessageTransiting.m in Sources */,
+				CE1580561C0D80E70034023D /* SendController.m in Sources */,
+				CE1580251C0D65760034023D /* ExtensionDelegate.m in Sources */,
+				CE1580591C0D80E70034023D /* TransactionsController.m in Sources */,
+				CE1580221C0D65760034023D /* InterfaceController.m in Sources */,
+				CE1580511C0D80E70034023D /* CommonData.m in Sources */,
+				CE15805A1C0D80E70034023D /* TransactionTableRowController.m in Sources */,
+				CE1580531C0D80E70034023D /* OutputsRow.m in Sources */,
+				CE1580571C0D80E70034023D /* TokensController.m in Sources */,
+				CE1580521C0D80E70034023D /* InputsRow.m in Sources */,
+				CE1580581C0D80E70034023D /* TransactionDetailController.m in Sources */,
+				CE1580551C0D80E70034023D /* ReceiveController.m in Sources */,
+				CE1580541C0D80E70034023D /* PriceSelectionController.m in Sources */,
+				CE1580281C0D65760034023D /* NotificationController.m in Sources */,
+				CE15802B1C0D65760034023D /* GlanceController.m in Sources */,
+				CE15802E1C0D65760034023D /* ComplicationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		301BF551109A68C00062928A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CordovaLib;
+			targetProxy = 301BF550109A68C00062928A /* PBXContainerItemProxy */;
+		};
+		CE15801C1C0D65760034023D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE1580181C0D65750034023D /* Coin Space WatchApp Extension */;
+			targetProxy = CE15801B1C0D65760034023D /* PBXContainerItemProxy */;
+		};
+		CE1580331C0D65760034023D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE15800C1C0D65750034023D /* Coin Space WatchApp */;
+			targetProxy = CE1580321C0D65760034023D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE15800F1C0D65750034023D /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE1580101C0D65750034023D /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = CoinSpace/CoinSpace.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoinSpace/CoinSpace-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+				);
+				INFOPLIST_FILE = "CoinSpace/CoinSpace-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak_framework",
+					AVFoundation,
+					"-weak_framework",
+					CoreMedia,
+					"-weak-lSystem",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coinspace.wallet-dev";
+				PRODUCT_NAME = CoinSpace;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = CoinSpace/CoinSpace.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoinSpace/CoinSpace-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+				);
+				INFOPLIST_FILE = "CoinSpace/CoinSpace-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak_framework",
+					AVFoundation,
+					"-weak_framework",
+					CoreMedia,
+					"-weak-lSystem",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coinspace.wallet-dev";
+				PRODUCT_NAME = CoinSpace;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak_framework",
+					AVFoundation,
+					"-weak_framework",
+					CoreMedia,
+					"-weak-lSystem",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak_framework",
+					AVFoundation,
+					"-weak_framework",
+					CoreMedia,
+					"-weak-lSystem",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		CE1580351C0D65760034023D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Coin Space WatchApp/Coin Space WatchApp.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = Coin_Space_WatchApp_Extension;
+				INFOPLIST_FILE = "Coin Space WatchApp/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coinspace.wallet-dev.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		CE1580361C0D65760034023D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Coin Space WatchApp/Coin Space WatchApp.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = Coin_Space_WatchApp_Extension;
+				INFOPLIST_FILE = "Coin Space WatchApp/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coinspace.wallet-dev.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		CE1580371C0D65760034023D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Coin Space WatchApp Extension/Coin Space WatchApp Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Coin Space WatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak-lSystem",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coinspace.wallet-dev.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		CE1580381C0D65760034023D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Coin Space WatchApp Extension/Coin Space WatchApp Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Coin Space WatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak-lSystem",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coinspace.wallet-dev.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CoinSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CoinSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE1580391C0D65760034023D /* Build configuration list for PBXNativeTarget "Coin Space WatchApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE1580371C0D65760034023D /* Debug */,
+				CE1580381C0D65760034023D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE15803B1C0D65760034023D /* Build configuration list for PBXNativeTarget "Coin Space WatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE1580351C0D65760034023D /* Debug */,
+				CE1580361C0D65760034023D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
