@@ -39,6 +39,9 @@
         
         [_currencyPicker setItems:_pickersArray];
         [_currencyPicker setEnabled:NO];
+        
+        WKPickerItem *defaultPickerItem = [_pickersArray objectAtIndex:0];
+        _selectedCurrency = defaultPickerItem.title;
     }
 }
 
