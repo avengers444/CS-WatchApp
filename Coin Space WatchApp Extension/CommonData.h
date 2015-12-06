@@ -26,6 +26,8 @@
     NSString *selectedCurrency;
     /// Transaction history
     NSArray *lastTransactionDictionary;
+    
+    BOOL isMectoOn;
 }
 
 + (CommonData *)shaderData;
@@ -78,5 +80,9 @@
  Return transactions info
  */
 - (NSArray *)getTransactionsInfo;
+
+- (void)setMecto:(BOOL)isOn;
+
+- (BOOL)isMectoOn;
 
 @end

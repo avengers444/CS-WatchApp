@@ -123,6 +123,24 @@ static CommonData *sharedData = nil;
             NSLog(@"unknown format");
         }
     }];
+    
+    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"mectoReceiveResult" listener:^(id  _Nullable messageObject) {
+        if ([messageObject isKindOfClass:[NSDictionary class]]) {
+            
+        } else {
+            NSLog(@"unknown format");
+        }
+    }];
+    
+    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"mectoErrorQueue" listener:^(id  _Nullable messageObject) {
+        if ([messageObject isKindOfClass:[NSDictionary class]]) {
+            isMectoOn = NO;
+            NSString *errorString = [messageObject objectForKey:@"selectionString"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"mectoErrorNotification" object:errorString];
+        } else {
+            NSLog(@"unknown format");
+        }
+    }];
 }
 
 - (NSString *)getBTCString:(NSNumber *)amount {
@@ -187,6 +205,14 @@ static CommonData *sharedData = nil;
 
 - (NSArray *)getTransactionsInfo {
     return lastTransactionDictionary;
+}
+
+- (void)setMecto:(BOOL)isOn {
+    isMectoOn = isOn;
+}
+
+- (BOOL)isMectoOn {
+    return isMectoOn;
 }
 
 @end

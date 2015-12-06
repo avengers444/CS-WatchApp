@@ -98,6 +98,7 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
 }
 
 - (IBAction)openPriceCurrency {
+    [self requestPrice];
     if ([[CommonData shaderData] getCurrencyList].count > 0) {
         [self presentControllerWithName:@"PriceSelectionController" context:nil];
     } else {
@@ -121,12 +122,10 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
 
 - (IBAction)updateBalanceAction {
     [self requestBalance];
-    [self requestPrice];
 }
 
 - (void)requestBalance {
-    [[CommonData shaderData] sendMessage:@"showQrCode" queue:@"requestCommandQueue"];
-//    [[CommonData shaderData] sendMessage:@"updateBalance" queue:@"requestCommandQueue"];
+    [[CommonData shaderData] sendMessage:@"updateBalance" queue:@"requestCommandQueue"];
 }
 
 - (void)requestPrice {
