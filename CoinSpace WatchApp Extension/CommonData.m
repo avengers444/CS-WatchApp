@@ -28,8 +28,8 @@ static CommonData *sharedData = nil;
     defaultCurrency = @"USD";
     selectedCurrency = defaultCurrency;
     
-    wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.coinspace.wallet-dev" optionalDirectory:nil transitingType:MMWormholeTransitingTypeSessionContext];
-
+    wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.coinspace.wallet.dev" optionalDirectory:nil transitingType:MMWormholeTransitingTypeSessionContext];
+    
     [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"balanceQueue" listener:^(id  _Nullable messageObject) {
         if ([messageObject isKindOfClass:[NSDictionary class]]) {
             NSString *balanceJson = (NSString *)[messageObject valueForKey:@"selectionString"];
@@ -137,6 +137,14 @@ static CommonData *sharedData = nil;
             isMectoOn = NO;
             NSString *errorString = [messageObject objectForKey:@"selectionString"];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"mectoErrorNotification" object:errorString];
+        } else {
+            NSLog(@"unknown format");
+        }
+    }];
+    
+    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"mectoStatusQueue" listener:^(id  _Nullable messageObject) {
+        if ([messageObject isKindOfClass:[NSDictionary class]]) {
+            
         } else {
             NSLog(@"unknown format");
         }

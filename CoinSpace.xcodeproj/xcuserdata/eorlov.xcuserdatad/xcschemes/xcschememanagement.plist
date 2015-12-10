@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Coin Space WatchApp.xcscheme</key>
+		<key>CoinSpace WatchApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
@@ -14,17 +14,17 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Complication - Coin Space WatchApp.xcscheme</key>
+		<key>Complication - CoinSpace WatchApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>Glance - Coin Space WatchApp.xcscheme</key>
+		<key>Glance - CoinSpace WatchApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>Notification - Coin Space WatchApp.xcscheme</key>
+		<key>Notification - CoinSpace WatchApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
@@ -37,7 +37,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE15800C1C0D65750034023D</key>
+		<key>CE49D1741C196EF6001B5BAD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

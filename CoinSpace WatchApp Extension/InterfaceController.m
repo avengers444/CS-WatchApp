@@ -36,6 +36,9 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
 
     // Configure interface objects here.
     [[CommonData shaderData] initModule];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onCurrencyNotification:) name:@"currencyNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onBalanceNotification:) name:@"balanceNotification" object:nil];
 }
 
 - (void)willActivate {
@@ -50,17 +53,11 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
     if (currencyPriceString != nil && ![currencyPriceString isEqualToString:@""]) {
         [_priceLabel setText:[NSString stringWithFormat:@"%@ %@", currencyPriceString, selectedCurrency]];
     }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onCurrencyNotification:) name:@"currencyNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onBalanceNotification:) name:@"balanceNotification" object:nil];
 }
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"currencyNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"balanceNotification" object:nil];
 }
 
 - (void)onCurrencyNotification:(NSNotification *)notification {
@@ -82,19 +79,6 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
     } else {
         [_priceLabel setText:@"Updating..."];
     }
-}
-
-- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier {
-    if ([segueIdentifier isEqualToString:sendSegue]) {
-        
-    } else if ([segueIdentifier isEqualToString:receiveSegue]) {
-        
-    } else if ([segueIdentifier isEqualToString:tokensSegue]) {
-        
-    } else {
-        NSLog(@"unknown segue");
-    }
-    return nil;
 }
 
 - (IBAction)openPriceCurrency {

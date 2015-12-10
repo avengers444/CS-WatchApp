@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -42,30 +42,26 @@
                         </group>
                         <group width="1" alignment="left" layout="vertical" id="jK1-cg-6e8">
                             <items>
-                                <group width="1" alignment="left" id="vQv-YA-2iW">
-                                    <items>
-                                        <button width="0.5" alignment="left" title="Send" id="HmI-xR-OaL">
-                                            <connections>
-                                                <segue destination="joZ-ye-C8y" kind="push" identifier="sendSegue" id="Iw3-hu-3je"/>
-                                            </connections>
-                                        </button>
-                                        <button width="0.5" alignment="left" title="Receive" id="gSJ-ih-Q9w">
-                                            <connections>
-                                                <segue destination="YmU-Gp-gpa" kind="push" identifier="receiveSegue" id="RMe-eb-pN7"/>
-                                            </connections>
-                                        </button>
-                                    </items>
-                                </group>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" id="shZ-Xj-bNK">
-                            <items>
-                                <button width="0.5" alignment="left" title="History" id="AF0-Rs-wWJ">
+                                <button width="1" alignment="left" title="Send" id="HmI-xR-OaL">
+                                    <color key="backgroundColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="joZ-ye-C8y" kind="push" identifier="sendSegue" id="Iw3-hu-3je"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Receive" id="gSJ-ih-Q9w">
+                                    <color key="backgroundColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="YmU-Gp-gpa" kind="push" identifier="receiveSegue" id="RMe-eb-pN7"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="History" id="AF0-Rs-wWJ">
+                                    <color key="backgroundColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="openTransactionsController" destination="AgC-eL-Hgc" id="XaX-gU-gJ1"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" alignment="left" title="Tokens" id="Ogv-OM-1Hp">
+                                <button width="1" alignment="left" title="Tokens" id="Ogv-OM-1Hp">
+                                    <color key="backgroundColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="yEu-Kk-sbK" kind="push" identifier="tokensSegue" id="hAG-Rq-r8W"/>
                                     </connections>
@@ -281,7 +277,7 @@
                             </connections>
                         </picker>
                         <button width="1" height="0.25" alignment="left" verticalAlignment="bottom" title="Confirm" id="8AE-fR-5Gh">
-                            <color key="backgroundColor" red="0.60392156860000001" green="0.82352941180000006" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="confirmCurrency" destination="sd0-Vk-GYZ" id="VoK-xx-g6p"/>
                             </connections>

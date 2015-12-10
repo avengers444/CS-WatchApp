@@ -24,8 +24,12 @@
     // Configure interface objects here.
     [[CommonData shaderData] sendMessage:@"showQrCode" queue:@"requestCommandQueue"];
     
+    [_qrImageView setImageNamed:@"Activity"];
+    [_qrImageView startAnimatingWithImagesInRange:NSMakeRange(1, 15) duration:1. repeatCount:0];
+    
     [self setTitle:@"Receive"];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onQrCodeNotification:) name:@"qrCodeNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMectoStatusNotification:) name:@"mectoStatusNotification" object:nil];
 }
 
 - (void)willActivate {
@@ -54,6 +58,10 @@
     
     [_mectoSwitch setOn:NO];
     [self presentAlertControllerWithTitle:@"CoinSpace" message:errorMessage preferredStyle:WKAlertControllerStyleAlert actions:@[alerAction]];
+}
+
+- (void)onMectoStatusNotification:(NSNotification *)notification {
+    
 }
 
 - (IBAction)mectoSwitchAction:(BOOL)value {

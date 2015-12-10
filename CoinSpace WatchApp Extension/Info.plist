@@ -37,7 +37,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>com.coinspace.wallet-dev.watchkitapp</string>
+			<string>com.coinspace.wallet.dev.watchkitapp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
