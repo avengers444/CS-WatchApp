@@ -2,6 +2,7 @@
 *.perspectivev3
 *.pbxuser
 .DS_Store
+*xcuserdata*
 build/
 cordova
 platform_www
