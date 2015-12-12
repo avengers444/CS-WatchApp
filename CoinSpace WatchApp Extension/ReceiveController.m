@@ -22,14 +22,12 @@
     [super awakeWithContext:context];
     
     // Configure interface objects here.
+    [[CommonData shaderData] sendMessage:@"getMectoStatus" queue:@"requestCommandQueue"];
     [[CommonData shaderData] sendMessage:@"showQrCode" queue:@"requestCommandQueue"];
-    
-    [_qrImageView setImageNamed:@"Activity"];
-    [_qrImageView startAnimatingWithImagesInRange:NSMakeRange(1, 15) duration:1. repeatCount:0];
     
     [self setTitle:@"Receive"];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onQrCodeNotification:) name:@"qrCodeNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMectoStatusNotification:) name:@"mectoStatusNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMectoStatusNotification:) name:@"broadcastMectoStatus" object:nil];
 }
 
 - (void)willActivate {
@@ -61,7 +59,17 @@
 }
 
 - (void)onMectoStatusNotification:(NSNotification *)notification {
+    NSString *mectoStatus = notification.object;
     
+    if ([mectoStatus isEqualToString:@"off"]) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"mectoErrorNotification" object:nil];
+        [_mectoSwitch setOn:NO];
+        [[CommonData shaderData] setMecto:NO];
+    } else {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMectorErrorNotification:) name:@"mectoErrorNotification" object:nil];
+        [_mectoSwitch setOn:YES];
+        [[CommonData shaderData] setMecto:YES];
+    }
 }
 
 - (IBAction)mectoSwitchAction:(BOOL)value {
@@ -71,7 +79,7 @@
         [[CommonData shaderData] sendMessage:@"turnMectoOn" queue:@"requestCommandQueue"];
     } else {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:@"mectoErrorNotification" object:nil];
-        [[CommonData shaderData] sendMessage:@"TurnMectoOff" queue:@"requestCommandQueue"];
+        [[CommonData shaderData] sendMessage:@"turnMectoOff" queue:@"requestCommandQueue"];
     }
 }
 

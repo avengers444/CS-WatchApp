@@ -15,8 +15,7 @@
                                 <group width="1" alignment="left" id="MWk-Fd-D0n">
                                     <items>
                                         <label alignment="left" text=" " id="O6G-NZ-TxW"/>
-                                        <button width="24" height="24" alignment="right" id="JRW-en-HgP">
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <button width="24" height="24" alignment="right" backgroundImage="refresh" id="JRW-en-HgP">
                                             <connections>
                                                 <action selector="updateBalanceAction" destination="AgC-eL-Hgc" id="NbT-fI-yjX"/>
                                             </connections>
@@ -28,8 +27,7 @@
                                 <group width="1" alignment="left" id="1yb-VQ-EFU">
                                     <items>
                                         <label alignment="left" text=" " id="atu-En-gJE"/>
-                                        <button width="24" height="24" alignment="right" id="NYe-n2-VIA">
-                                            <color key="backgroundColor" red="1" green="0.35466426559999997" blue="0.30081892649999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <button width="24" height="24" alignment="right" backgroundImage="dots" id="NYe-n2-VIA">
                                             <connections>
                                                 <action selector="openPriceCurrency" destination="AgC-eL-Hgc" id="AOj-K0-Yja"/>
                                             </connections>
@@ -42,7 +40,7 @@
                         </group>
                         <group width="1" alignment="left" layout="vertical" id="jK1-cg-6e8">
                             <items>
-                                <button width="1" alignment="left" title="Send" id="HmI-xR-OaL">
+                                <button width="1" alignment="left" hidden="YES" title="Send" id="HmI-xR-OaL">
                                     <color key="backgroundColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="joZ-ye-C8y" kind="push" identifier="sendSegue" id="Iw3-hu-3je"/>
@@ -60,7 +58,7 @@
                                         <action selector="openTransactionsController" destination="AgC-eL-Hgc" id="XaX-gU-gJ1"/>
                                     </connections>
                                 </button>
-                                <button width="1" alignment="left" title="Tokens" id="Ogv-OM-1Hp">
+                                <button width="1" alignment="left" hidden="YES" title="Tokens" id="Ogv-OM-1Hp">
                                     <color key="backgroundColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <segue destination="yEu-Kk-sbK" kind="push" identifier="tokensSegue" id="hAG-Rq-r8W"/>
@@ -95,7 +93,7 @@
             <objects>
                 <controller id="YmU-Gp-gpa" customClass="ReceiveController">
                     <items>
-                        <group width="1" height="0.75" alignment="left" id="A3R-93-0ab">
+                        <group width="1" height="0.75" alignment="left" layout="vertical" id="A3R-93-0ab">
                             <items>
                                 <imageView width="1" height="1" alignment="left" id="eOX-kl-g6K"/>
                             </items>
@@ -303,12 +301,8 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y">
-                            <color key="backgroundColor" red="0.60392156860000001" green="0.82352941180000006" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </group>
-                        <group alignment="left" id="uCw-4Q-Ouw">
-                            <color key="backgroundColor" red="1" green="0.35466426559999997" blue="0.30081892649999997" alpha="1" colorSpace="calibratedRGB"/>
-                        </group>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>

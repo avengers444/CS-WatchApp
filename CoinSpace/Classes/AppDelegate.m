@@ -148,4 +148,8 @@
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
+- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary * _Nullable))reply {
+    NSLog(@"handle watchkit request");
+}
+
 @end

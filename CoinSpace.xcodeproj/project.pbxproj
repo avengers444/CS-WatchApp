@@ -96,6 +96,7 @@
 		CE49D1DA1C1975F7001B5BAD /* MMWormholeSessionContextTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4F823AA024AB587278BB8 /* MMWormholeSessionContextTransiting.m */; };
 		CE49D1DB1C1975F7001B5BAD /* MMWormholeSessionFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 981422640BA647D6B8A3559E /* MMWormholeSessionFileTransiting.m */; };
 		CE49D1DC1C1975F7001B5BAD /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = AF71468AD67C41718AFEDF0B /* MMWormholeSessionMessageTransiting.m */; };
+		CE49D1E01C1BE829001B5BAD /* CommandMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CE49D1DF1C1BE829001B5BAD /* CommandMessage.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		D592A091454942458AF7FA3B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD09AE2F38343C3ABB7D449 /* LocalAuthentication.framework */; };
 		D768DEEE76C4449E8CCEF3E7 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1401576A471A98C362E3 /* SocialSharing.m */; };
@@ -287,6 +288,8 @@
 		CE49D1B91C1972EA001B5BAD /* TransactionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionsController.m; sourceTree = "<group>"; };
 		CE49D1BA1C1972EA001B5BAD /* TransactionTableRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionTableRowController.h; sourceTree = "<group>"; };
 		CE49D1BB1C1972EA001B5BAD /* TransactionTableRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionTableRowController.m; sourceTree = "<group>"; };
+		CE49D1DE1C1BE829001B5BAD /* CommandMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandMessage.h; sourceTree = "<group>"; };
+		CE49D1DF1C1BE829001B5BAD /* CommandMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandMessage.m; sourceTree = "<group>"; };
 		D0294406166E48E4A7E90F91 /* MMWormholeTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMWormholeTransiting.h; path = "cordova-plugin-apple-watch/MMWormholeTransiting.h"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		D535F6C246234E74A3A98156 /* CDVStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = org.apache.cordova.statusbar/CDVStatusBar.h; sourceTree = "<group>"; };
@@ -571,6 +574,8 @@
 			children = (
 				CE49D1A81C1972EA001B5BAD /* CommonData.h */,
 				CE49D1A91C1972EA001B5BAD /* CommonData.m */,
+				CE49D1DE1C1BE829001B5BAD /* CommandMessage.h */,
+				CE49D1DF1C1BE829001B5BAD /* CommandMessage.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -987,6 +992,7 @@
 				CE49D1BE1C1972EA001B5BAD /* OutputsRow.m in Sources */,
 				CE49D1C21C1972EA001B5BAD /* TokensController.m in Sources */,
 				CE49D1BD1C1972EA001B5BAD /* InputsRow.m in Sources */,
+				CE49D1E01C1BE829001B5BAD /* CommandMessage.m in Sources */,
 				CE49D1C31C1972EA001B5BAD /* TransactionDetailController.m in Sources */,
 				CE49D1C01C1972EA001B5BAD /* ReceiveController.m in Sources */,
 				CE49D1BF1C1972EA001B5BAD /* PriceSelectionController.m in Sources */,
@@ -1043,6 +1049,11 @@
 				GCC_PREFIX_HEADER = "CoinSpace/CoinSpace-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+				);
 				INFOPLIST_FILE = "CoinSpace/CoinSpace-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
@@ -1077,6 +1088,11 @@
 				GCC_PREFIX_HEADER = "CoinSpace/CoinSpace-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+				);
 				INFOPLIST_FILE = "CoinSpace/CoinSpace-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
@@ -1216,6 +1232,14 @@
 				INFOPLIST_FILE = "CoinSpace WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak-lSystem",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coinspace.wallet.dev.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1250,6 +1274,14 @@
 				INFOPLIST_FILE = "CoinSpace WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak-lSystem",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coinspace.wallet.dev.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1292,6 +1324,14 @@
 				IBSC_MODULE = CoinSpace_WatchApp_Extension;
 				INFOPLIST_FILE = "CoinSpace WatchApp/Info.plist";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak-lSystem",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coinspace.wallet.dev.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1327,6 +1367,14 @@
 				IBSC_MODULE = CoinSpace_WatchApp_Extension;
 				INFOPLIST_FILE = "CoinSpace WatchApp/Info.plist";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					CoreFoundation,
+					"-weak_framework",
+					UIKit,
+					"-weak-lSystem",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coinspace.wallet.dev.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1365,6 +1413,7 @@
 				CE49D19F1C196EF7001B5BAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE49D1A11C196EF7001B5BAD /* Build configuration list for PBXNativeTarget "CoinSpace WatchApp" */ = {
 			isa = XCConfigurationList;
@@ -1373,6 +1422,7 @@
 				CE49D1A31C196EF7001B5BAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

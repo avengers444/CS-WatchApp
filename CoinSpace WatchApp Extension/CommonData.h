@@ -10,6 +10,13 @@
 #import "MMWormhole.h"
 #import "MMWormholeSession.h"
 
+typedef enum SaveType: NSInteger {
+    kBalanceData,
+    kCurrencyData,
+    kQRData,
+    kWalletId
+} SaveType;
+
 @interface CommonData : NSObject {
     MMWormhole *wormhole;
     MMWormholeSession *watchConnectivityListeningWormhole;
@@ -28,6 +35,8 @@
     NSArray *lastTransactionDictionary;
     
     BOOL isMectoOn;
+    
+    NSUserDefaults *userDefaults;
 }
 
 + (CommonData *)shaderData;
@@ -44,7 +53,7 @@
  */
 - (void)sendMessage:(id)message queue:(NSString *)queueName;
 
-- (void)saveData;
+- (void)saveData:(SaveType)kSaveType withValue:(NSString *)value;
 
 /**
  Return last balance string receiving from iPhone app

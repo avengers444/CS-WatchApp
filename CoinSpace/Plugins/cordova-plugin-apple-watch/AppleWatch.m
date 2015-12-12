@@ -34,7 +34,7 @@
 
     [self.watchConnectivityListeningWormhole activateSessionListening];
 
-    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:appGroupId optionalDirectory:nil transitingType:MMWormholeTransitingTypeSessionContext];
+    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:appGroupId optionalDirectory:nil transitingType:MMWormholeTransitingTypeSessionMessage];
 
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:appGroupId];
 

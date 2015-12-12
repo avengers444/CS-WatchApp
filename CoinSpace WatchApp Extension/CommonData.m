@@ -7,6 +7,11 @@
 //
 
 #import "CommonData.h"
+#import "CommandMessage.h"
+
+#define kUDBalance @"kBalance"
+#define kUDCurrency @"kCurrency"
+#define kUDQRCode @"kQRCode"
 
 @implementation CommonData
 
@@ -16,139 +21,126 @@ static CommonData *sharedData = nil;
     @synchronized (self) {
         if (sharedData == nil) {
             sharedData = [[CommonData alloc] init];
+            
+            [sharedData subscribe];
         }
         return sharedData;
     }
 }
 
-- (void)initModule {
+- (void)subscribe {
+    userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.coinspace.wallet.dev"];
+    [userDefaults synchronize];
+    
     watchConnectivityListeningWormhole = [MMWormholeSession sharedListeningSession];
     [watchConnectivityListeningWormhole activateSessionListening];
     
-    defaultCurrency = @"USD";
-    selectedCurrency = defaultCurrency;
+    wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.coinspace.wallet.dev" optionalDirectory:nil transitingType:
+                MMWormholeTransitingTypeSessionMessage];
     
-    wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.coinspace.wallet.dev" optionalDirectory:nil transitingType:MMWormholeTransitingTypeSessionContext];
-    
-    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"balanceQueue" listener:^(id  _Nullable messageObject) {
+    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"comandAnswerQueue" listener:^(id  _Nullable messageObject) {
         if ([messageObject isKindOfClass:[NSDictionary class]]) {
-            NSString *balanceJson = (NSString *)[messageObject valueForKey:@"selectionString"];
-            NSData *jsonData = [balanceJson dataUsingEncoding:NSUTF8StringEncoding];
+            NSString *messageString = [messageObject valueForKey:@"selectionString"];
+            NSData *messageData = [messageString dataUsingEncoding:NSUTF8StringEncoding];
             NSError *error = nil;
-            NSDictionary *balanceDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
-            
-            NSNumber *balance = [balanceDictionary valueForKey:@"balance"];
-            NSString *denomination = [balanceDictionary valueForKey:@"denomination"];
-            lastBalanceString = [NSString stringWithFormat:@"%@ %@", [self getBTCString:balance], denomination];
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"balanceNotification" object:nil];
-        } else {
-            NSLog(@"unknown format");
-        }
-    }];
-    
-    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"ratesQueue" listener:^(id  _Nullable messageObject) {
-        if ([messageObject isKindOfClass:[NSDictionary class]]) {
-            NSString *stringMessage = [messageObject valueForKey:@"selectionString"];
-            NSData *jsonData = [stringMessage dataUsingEncoding:NSUTF8StringEncoding];
-            NSError *error = nil;
-            NSDictionary *ratesDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+            NSDictionary *dictionaryMessage = [NSJSONSerialization JSONObjectWithData:messageData options:NSJSONReadingMutableContainers error:&error];
             
             if (error != nil) {
                 NSLog(@"%@", [error localizedDescription]);
             } else {
-                lastCurrencyDictionary = ratesDictionary;
-                if (lastCurrencyDictionary.count > 0) {
-                    if ([[lastCurrencyDictionary allKeys] containsObject:selectedCurrency]) {
-                        lastCurrencyString = [NSString stringWithFormat:@"%@ %@", [lastCurrencyDictionary valueForKey:defaultCurrency], selectedCurrency];
-                    } else {
-                        defaultCurrency = [[lastCurrencyDictionary allKeys] objectAtIndex:0];
-                        selectedCurrency = defaultCurrency;
-                        lastCurrencyString = [NSString stringWithFormat:@"%@ %@", [lastCurrencyDictionary valueForKey:defaultCurrency], selectedCurrency];
+                CommandMessage *commandMessage = [[CommandMessage alloc] initWithDictionary:dictionaryMessage];
+                
+                switch (commandMessage.command) {
+                    case kBalance: {
+                        NSNumber *balance = [commandMessage.messageValues valueForKey:@"balance"];
+                        NSString *denomination = [commandMessage.messageValues valueForKey:@"denomination"];
+                        lastBalanceString = [NSString stringWithFormat:@"%@ %@", [self getBTCString:balance], denomination];
+                        
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"balanceNotification" object:nil];
                     }
-                    
-                    [[NSNotificationCenter defaultCenter] postNotificationName:@"currencyNotification" object:nil];
-                } else {
-                    NSLog(@"");
+                        break;
+                    case kCurrency: {
+                        lastCurrencyDictionary = [commandMessage.messageValues valueForKey:@"currency"];
+                        if (lastCurrencyDictionary.count > 0) {
+                            if ([[lastCurrencyDictionary allKeys] containsObject:selectedCurrency]) {
+                                lastCurrencyString = [NSString stringWithFormat:@"%@ %@", [lastCurrencyDictionary valueForKey:defaultCurrency], selectedCurrency];
+                            } else {
+                                defaultCurrency = [[lastCurrencyDictionary allKeys] objectAtIndex:0];
+                                selectedCurrency = defaultCurrency;
+                                lastCurrencyString = [NSString stringWithFormat:@"%@ %@", [lastCurrencyDictionary valueForKey:defaultCurrency], selectedCurrency];
+                            }
+                            
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"currencyNotification" object:nil];
+                        } else {
+                            NSLog(@"");
+                        }
+                    }
+                        break;
+                    case kDefaultCurrency: {
+                        defaultCurrency = [commandMessage.messageValues valueForKey:@"defaultCurrency"];
+                    }
+                        break;
+                    case kTransaction: {
+                        lastTransactionDictionary = [commandMessage.messageValues objectForKey:@"transactions"];
+                        
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"transactionNotification" object:nil];
+                    }
+                        break;
+                    case kQr: {
+                        NSData *imgData;
+                        
+                        NSString *dataUrlImg = [commandMessage.messageValues valueForKey:@"qr"];
+                        NSRange range = [dataUrlImg rangeOfString:@";base64,"];
+                        if (range.location != NSNotFound) {
+                            NSRange removeRange = NSMakeRange(0, range.location + range.length);
+                            NSString *resultString = [dataUrlImg stringByReplacingCharactersInRange:removeRange withString:@""];
+                            imgData = [[NSData alloc] initWithBase64EncodedString:resultString options:0];
+                            
+                            [self saveData:kQRData withValue:resultString];
+                        } else {
+                            imgData = [[NSData alloc] initWithBase64EncodedString:dataUrlImg options:0];
+                            
+                            [self saveData:kQRData withValue:dataUrlImg];
+                        }
+                        
+                        NSString *walletId = [commandMessage.messageValues valueForKey:@"address"];
+                        [self saveData:kWalletId withValue:walletId];
+                        
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"qrCodeNotification" object:imgData];
+                    }
+                        break;
+                    case kMectoError: {
+                        if (isMectoOn == YES) {
+                            NSString *errorString = [commandMessage.messageValues valueForKey:@"errorString"];
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"mectoErrorNotification" object:errorString];
+                        }
+                        isMectoOn = NO;
+                    }
+                        break;
+                    case kMectoResult: {
+                        
+                    }
+                        break;
+                    case kMectoStatus: {
+                        NSString *mectoStatus = [commandMessage.messageValues valueForKey:@"status"];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"broadcastMectoStatus" object:mectoStatus];
+                    }
+                        break;
+                    default:
+                        break;
                 }
             }
         } else {
             NSLog(@"unknown format");
         }
     }];
-    
-    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"defaultCurrencyChangedQueue" listener:^(id  _Nullable messageObject) {
-        if ([messageObject isKindOfClass:[NSDictionary class]]) {
-            defaultCurrency = (NSString *)[messageObject valueForKey:@"selectionString"];
-        } else {
-            NSLog(@"unknown format");
-        }
-    }];
-    
-    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"transactionHistoryQueue" listener:^(id  _Nullable messageObject) {
-        if ([messageObject isKindOfClass:[NSDictionary class]]) {
-            NSString *transactionString = (NSString *)[messageObject valueForKey:@"selectionString"];
-            NSData *jsonData = [transactionString dataUsingEncoding:NSUTF8StringEncoding];
-            NSError *error = nil;
-            NSArray *transactionDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
-            
-            if (error != nil) {
-                NSLog(@"%@", [error localizedDescription]);
-            } else {
-                lastTransactionDictionary = transactionDictionary;
-                
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"transactionNotification" object:nil];
-            }
-        } else {
-            NSLog(@"unknown format");
-        }
-    }];
-    
-    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"qrQueue" listener:^(id  _Nullable messageObject) {
-        if ([messageObject isKindOfClass:[NSDictionary class]]) {
-            NSData *imgData;
-            
-            NSString *dataUrlImg = [messageObject valueForKey:@"selectionString"];
-            NSRange range = [dataUrlImg rangeOfString:@";base64,"];
-            if (range.location != NSNotFound) {
-                NSRange removeRange = NSMakeRange(0, range.location + range.length);
-                NSString *resultString = [dataUrlImg stringByReplacingCharactersInRange:removeRange withString:@""];
-                imgData = [[NSData alloc] initWithBase64EncodedString:resultString options:0];
-            } else {
-                imgData = [[NSData alloc] initWithBase64EncodedString:dataUrlImg options:0];
-            }
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"qrCodeNotification" object:imgData];
-        } else {
-            NSLog(@"unknown format");
-        }
-    }];
-    
-    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"mectoReceiveResult" listener:^(id  _Nullable messageObject) {
-        if ([messageObject isKindOfClass:[NSDictionary class]]) {
-            
-        } else {
-            NSLog(@"unknown format");
-        }
-    }];
-    
-    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"mectoErrorQueue" listener:^(id  _Nullable messageObject) {
-        if ([messageObject isKindOfClass:[NSDictionary class]]) {
-            isMectoOn = NO;
-            NSString *errorString = [messageObject objectForKey:@"selectionString"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"mectoErrorNotification" object:errorString];
-        } else {
-            NSLog(@"unknown format");
-        }
-    }];
-    
-    [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"mectoStatusQueue" listener:^(id  _Nullable messageObject) {
-        if ([messageObject isKindOfClass:[NSDictionary class]]) {
-            
-        } else {
-            NSLog(@"unknown format");
-        }
-    }];
+}
+
+- (void)initModule {
+    defaultCurrency = @"USD";
+    if (selectedCurrency == nil || [selectedCurrency isEqualToString:@""]) {
+        selectedCurrency = defaultCurrency;
+    }
 }
 
 - (NSString *)getBTCString:(NSNumber *)amount {
@@ -161,8 +153,24 @@ static CommonData *sharedData = nil;
     [wormhole passMessageObject:message identifier:queueName];
 }
 
-- (void)saveData {
-    
+- (void)saveData:(SaveType)kSaveType withValue:(NSString *)value{
+    switch (kSaveType) {
+        case kBalanceData:
+
+            break;
+        case  kCurrencyData:
+            
+            break;
+            
+        case kQRData:
+            
+            break;
+        case kWalletId:
+            
+            break;
+        default:
+            break;
+    }
 }
 
 - (NSString *)getBalaneString {
