@@ -14,7 +14,8 @@ typedef enum SaveType: NSInteger {
     kBalanceData,
     kCurrencyData,
     kQRData,
-    kWalletId
+    kWalletId,
+    kDenomination
 } SaveType;
 
 @interface CommonData : NSObject {

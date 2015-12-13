@@ -32,6 +32,8 @@ static CommonData *sharedData = nil;
     userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.coinspace.wallet.dev"];
     [userDefaults synchronize];
     
+    selectedWalletId = [self loadData:kWalletId];
+    
     watchConnectivityListeningWormhole = [MMWormholeSession sharedListeningSession];
     [watchConnectivityListeningWormhole activateSessionListening];
     
@@ -59,6 +61,9 @@ static CommonData *sharedData = nil;
                         if (![balanceWalletId isEqualToString:selectedWalletId]) {
                             selectedWalletId = balanceWalletId;
                         }
+                        
+                        [self saveData:kBalanceData withValue:[self getBTCString:balance]];
+                        [self saveData:kDenomination withValue:denomination];
                         
                         lastBalanceString = [NSString stringWithFormat:@"%@ %@", [self getBTCString:balance], denomination];
                         
@@ -177,6 +182,9 @@ static CommonData *sharedData = nil;
         case kBalanceData:
             [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kBalanceData]];
             break;
+        case kDenomination:
+            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kDenomination]];
+            break;
         case kCurrencyData:
             [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kCurrencyData]];
             break;
@@ -196,6 +204,9 @@ static CommonData *sharedData = nil;
     switch (kSaveType) {
         case kBalanceData:
             return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kBalanceData]];
+            break;
+        case kDenomination:
+            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kDenomination]];
             break;
         case kCurrencyData:
             return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kCurrencyData]];
