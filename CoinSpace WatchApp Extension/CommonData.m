@@ -54,6 +54,12 @@ static CommonData *sharedData = nil;
                     case kBalance: {
                         NSNumber *balance = [commandMessage.messageValues valueForKey:@"balance"];
                         NSString *denomination = [commandMessage.messageValues valueForKey:@"denomination"];
+                        NSString *balanceWalletId = [commandMessage.messageValues valueForKey:@"walletId"];
+                        
+                        if (![balanceWalletId isEqualToString:selectedWalletId]) {
+                            selectedWalletId = balanceWalletId;
+                        }
+                        
                         lastBalanceString = [NSString stringWithFormat:@"%@ %@", [self getBTCString:balance], denomination];
                         
                         [[NSNotificationCenter defaultCenter] postNotificationName:@"balanceNotification" object:nil];
@@ -89,6 +95,8 @@ static CommonData *sharedData = nil;
                     case kQr: {
                         NSData *imgData;
                         
+                        NSString *lastSavedQr = [self loadData:kQRData];
+                        NSString *walletId = [commandMessage.messageValues valueForKey:@"address"];
                         NSString *dataUrlImg = [commandMessage.messageValues valueForKey:@"qr"];
                         NSRange range = [dataUrlImg rangeOfString:@";base64,"];
                         if (range.location != NSNotFound) {
@@ -96,14 +104,25 @@ static CommonData *sharedData = nil;
                             NSString *resultString = [dataUrlImg stringByReplacingCharactersInRange:removeRange withString:@""];
                             imgData = [[NSData alloc] initWithBase64EncodedString:resultString options:0];
                             
-                            [self saveData:kQRData withValue:resultString];
+                            if (![walletId isEqualToString:selectedWalletId]) {
+                                [self saveData:kQRData withValue:resultString];
+                            } else {
+                                if (lastSavedQr == nil || ![lastSavedQr isEqualToString:resultString]) {
+                                    [self saveData:kQRData withValue:resultString];
+                                }
+                            }
                         } else {
                             imgData = [[NSData alloc] initWithBase64EncodedString:dataUrlImg options:0];
                             
-                            [self saveData:kQRData withValue:dataUrlImg];
+                            if (![walletId isEqualToString:selectedWalletId]) {
+                                [self saveData:kQRData withValue:dataUrlImg];
+                            } else {
+                                if (lastSavedQr == nil || ![lastSavedQr isEqualToString:dataUrlImg]) {
+                                    [self saveData:kQRData withValue:dataUrlImg];
+                                }
+                            }
                         }
                         
-                        NSString *walletId = [commandMessage.messageValues valueForKey:@"address"];
                         [self saveData:kWalletId withValue:walletId];
                         
                         [[NSNotificationCenter defaultCenter] postNotificationName:@"qrCodeNotification" object:imgData];
@@ -153,24 +172,44 @@ static CommonData *sharedData = nil;
     [wormhole passMessageObject:message identifier:queueName];
 }
 
-- (void)saveData:(SaveType)kSaveType withValue:(NSString *)value{
+- (void)saveData:(SaveType)kSaveType withValue:(NSString *)value {
     switch (kSaveType) {
         case kBalanceData:
-
+            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kBalanceData]];
             break;
-        case  kCurrencyData:
-            
+        case kCurrencyData:
+            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kCurrencyData]];
             break;
-            
         case kQRData:
-            
+            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kQRData]];
             break;
         case kWalletId:
-            
+            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kWalletId]];
             break;
         default:
             break;
     }
+    [userDefaults synchronize];
+}
+
+- (NSString *)loadData:(SaveType)kSaveType {
+    switch (kSaveType) {
+        case kBalanceData:
+            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kBalanceData]];
+            break;
+        case kCurrencyData:
+            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kCurrencyData]];
+            break;
+        case kQRData:
+            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kQRData]];
+            break;
+        case kWalletId:
+            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kWalletId]];
+            break;
+        default:
+            break;
+    }
+    return @"";
 }
 
 - (NSString *)getBalaneString {
@@ -229,6 +268,10 @@ static CommonData *sharedData = nil;
 
 - (BOOL)isMectoOn {
     return isMectoOn;
+}
+
+- (NSString *)getSelectedWalletId {
+    return selectedWalletId;
 }
 
 @end

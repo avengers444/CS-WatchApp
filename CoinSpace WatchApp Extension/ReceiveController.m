@@ -22,8 +22,20 @@
     [super awakeWithContext:context];
     
     // Configure interface objects here.
+    NSString *savedWalletId = [[CommonData shaderData] loadData:kWalletId];
+    NSString *savedQr = [[CommonData shaderData] loadData:kQRData];
+    NSString *selectedWallet = [[CommonData shaderData] getSelectedWalletId];
+    
+    if (![selectedWallet isEqualToString:savedWalletId]) {
+        [[CommonData shaderData] sendMessage:@"showQrCode" queue:@"requestCommandQueue"];
+    } else {
+        NSData *imgData = [[NSData alloc] initWithBase64EncodedString:savedQr options:0];
+        UIImage *imgQr = [UIImage imageWithData:imgData];
+        
+        [_qrImageView setImage:imgQr];
+    }
+    
     [[CommonData shaderData] sendMessage:@"getMectoStatus" queue:@"requestCommandQueue"];
-    [[CommonData shaderData] sendMessage:@"showQrCode" queue:@"requestCommandQueue"];
     
     [self setTitle:@"Receive"];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onQrCodeNotification:) name:@"qrCodeNotification" object:nil];

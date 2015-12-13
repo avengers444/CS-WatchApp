@@ -37,6 +37,8 @@ typedef enum SaveType: NSInteger {
     BOOL isMectoOn;
     
     NSUserDefaults *userDefaults;
+    
+    NSString *selectedWalletId;
 }
 
 + (CommonData *)shaderData;
@@ -53,7 +55,16 @@ typedef enum SaveType: NSInteger {
  */
 - (void)sendMessage:(id)message queue:(NSString *)queueName;
 
+/**
+ Save some values to NSUserDefaults
+ */
 - (void)saveData:(SaveType)kSaveType withValue:(NSString *)value;
+
+/**
+ Load some values from NSUserDefault
+ @return values by key
+ */
+- (NSString *)loadData:(SaveType)kSaveType;
 
 /**
  Return last balance string receiving from iPhone app
@@ -93,5 +104,7 @@ typedef enum SaveType: NSInteger {
 - (void)setMecto:(BOOL)isOn;
 
 - (BOOL)isMectoOn;
+
+- (NSString *)getSelectedWalletId;
 
 @end
