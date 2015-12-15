@@ -29,7 +29,7 @@ static CommonData *sharedData = nil;
 }
 
 - (void)subscribe {
-    userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.coinspace.wallet.dev"];
+    userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.coinspace.wallet"];
     [userDefaults synchronize];
     
     selectedWalletId = [self loadData:kWalletId];
@@ -37,7 +37,7 @@ static CommonData *sharedData = nil;
     watchConnectivityListeningWormhole = [MMWormholeSession sharedListeningSession];
     [watchConnectivityListeningWormhole activateSessionListening];
     
-    wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.coinspace.wallet.dev" optionalDirectory:nil transitingType:
+    wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.coinspace.wallet" optionalDirectory:nil transitingType:
                 MMWormholeTransitingTypeSessionMessage];
     
     [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"comandAnswerQueue" listener:^(id  _Nullable messageObject) {
