@@ -33,10 +33,8 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
-    // Configure interface objects here.
-    [[CommonData shaderData] initModule];
     
+    // Configure interface objects here.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onCurrencyNotification:) name:@"currencyNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onBalanceNotification:) name:@"balanceNotification" object:nil];
 }
@@ -46,13 +44,6 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
     [super willActivate];
     
     [self configureView];
-    
-    NSString *selectedCurrency = [[CommonData shaderData] getSelectedCurrency];
-    NSString *currencyPriceString = [[CommonData shaderData] getCurrencyPriceBySymbol:selectedCurrency];
-    
-    if (currencyPriceString != nil && ![currencyPriceString isEqualToString:@""]) {
-        [_priceLabel setText:[NSString stringWithFormat:@"%@ %@", currencyPriceString, selectedCurrency]];
-    }
 }
 
 - (void)didDeactivate {
@@ -61,7 +52,7 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
 }
 
 - (void)onCurrencyNotification:(NSNotification *)notification {
-    [_priceLabel setText:[[CommonData shaderData] getCurrencyString]];
+    [_priceLabel setText:[[CommonData shaderData] getFullCurrencyInfo]];
 }
 
 - (void)onBalanceNotification:(NSNotification *)notification {
@@ -69,13 +60,15 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
 }
 
 - (void)configureView {
-    if ([[CommonData shaderData] getBalaneString] != nil) {
-        [_balanceLabel setText:[NSString stringWithFormat:@"%@", [[CommonData shaderData] getBalaneString]]];
+    NSString *balanceString = [[CommonData shaderData] getBalaneString];
+    NSString *currencyString = [[CommonData shaderData] getCurrencyString];
+    if (balanceString != nil) {
+        [_balanceLabel setText:[NSString stringWithFormat:@"%@", balanceString]];
     } else {
         [_balanceLabel setText:@"Updating..."];
     }
-    if ([[CommonData shaderData] getCurrencyString] != nil) {
-        [_priceLabel setText:[NSString stringWithFormat:@"%@", [[CommonData shaderData] getCurrencyString]]];
+    if (currencyString != nil) {
+        [_priceLabel setText:[NSString stringWithFormat:@"%@", [[CommonData shaderData] getFullCurrencyInfo]]];
     } else {
         [_priceLabel setText:@"Updating..."];
     }

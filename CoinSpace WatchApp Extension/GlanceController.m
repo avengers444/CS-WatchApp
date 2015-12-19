@@ -7,9 +7,12 @@
 //
 
 #import "GlanceController.h"
-
+#import "CommonData.h"
 
 @interface GlanceController()
+
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *currencyLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *lastDateCurrency;
 
 @end
 
@@ -20,11 +23,18 @@
     [super awakeWithContext:context];
 
     // Configure interface objects here.
+    [[CommonData shaderData] initModule];    
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    
+    NSString *glancePrice = [[CommonData shaderData] getFullCurrencyInfo];
+    NSString *lastDateString = [[CommonData shaderData] loadData:kLastCurrencyDate];
+    
+    [_currencyLabel setText:glancePrice];
+    [_lastDateCurrency setText:lastDateString];
 }
 
 - (void)didDeactivate {

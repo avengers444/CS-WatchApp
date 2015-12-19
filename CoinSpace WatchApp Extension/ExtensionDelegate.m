@@ -7,11 +7,13 @@
 //
 
 #import "ExtensionDelegate.h"
+#import "CommonData.h"
 
 @implementation ExtensionDelegate
 
 - (void)applicationDidFinishLaunching {
     // Perform any final initialization of your application.
+    [[CommonData shaderData] initModule];
 }
 
 - (void)applicationDidBecomeActive {

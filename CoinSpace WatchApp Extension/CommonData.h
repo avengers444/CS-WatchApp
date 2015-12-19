@@ -15,7 +15,10 @@ typedef enum SaveType: NSInteger {
     kCurrencyData,
     kQRData,
     kWalletId,
-    kDenomination
+    kDenomination,
+    kDefaultSelectedCurrency,
+    kDefaultUsedCurrency,
+    kLastCurrencyDate
 } SaveType;
 
 @interface CommonData : NSObject {
@@ -59,13 +62,13 @@ typedef enum SaveType: NSInteger {
 /**
  Save some values to NSUserDefaults
  */
-- (void)saveData:(SaveType)kSaveType withValue:(NSString *)value;
+- (void)saveData:(SaveType)kSaveType withValue:(id)value;
 
 /**
  Load some values from NSUserDefault
  @return values by key
  */
-- (NSString *)loadData:(SaveType)kSaveType;
+- (id)loadData:(SaveType)kSaveType;
 
 /**
  Return last balance string receiving from iPhone app
@@ -107,5 +110,7 @@ typedef enum SaveType: NSInteger {
 - (BOOL)isMectoOn;
 
 - (NSString *)getSelectedWalletId;
+
+- (NSString *)getFullCurrencyInfo;
 
 @end

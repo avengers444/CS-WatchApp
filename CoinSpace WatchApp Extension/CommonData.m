@@ -9,10 +9,6 @@
 #import "CommonData.h"
 #import "CommandMessage.h"
 
-#define kUDBalance @"kBalance"
-#define kUDCurrency @"kCurrency"
-#define kUDQRCode @"kQRCode"
-
 @implementation CommonData
 
 static CommonData *sharedData = nil;
@@ -38,8 +34,7 @@ static CommonData *sharedData = nil;
     [watchConnectivityListeningWormhole activateSessionListening];
     
     wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.coinspace.wallet" optionalDirectory:nil transitingType:
-                MMWormholeTransitingTypeSessionMessage];
-    
+                MMWormholeTransitingTypeSessionContext];
     [watchConnectivityListeningWormhole listenForMessageWithIdentifier:@"comandAnswerQueue" listener:^(id  _Nullable messageObject) {
         if ([messageObject isKindOfClass:[NSDictionary class]]) {
             NSString *messageString = [messageObject valueForKey:@"selectionString"];
@@ -71,24 +66,31 @@ static CommonData *sharedData = nil;
                     }
                         break;
                     case kCurrency: {
-                        lastCurrencyDictionary = [commandMessage.messageValues valueForKey:@"currency"];
-                        if (lastCurrencyDictionary.count > 0) {
+                        NSDictionary *currencyDictionary = [commandMessage.messageValues valueForKey:@"currency"];
+                        if (currencyDictionary.count > 0) {
+                            lastCurrencyDictionary = currencyDictionary;
+                            
+                            [self saveData:kCurrencyData withValue:lastCurrencyDictionary];
+                            
                             if ([[lastCurrencyDictionary allKeys] containsObject:selectedCurrency]) {
-                                lastCurrencyString = [NSString stringWithFormat:@"%@ %@", [lastCurrencyDictionary valueForKey:defaultCurrency], selectedCurrency];
+                                lastCurrencyString = [NSString stringWithFormat:@"%@", [lastCurrencyDictionary valueForKey:selectedCurrency]];
                             } else {
                                 defaultCurrency = [[lastCurrencyDictionary allKeys] objectAtIndex:0];
                                 selectedCurrency = defaultCurrency;
-                                lastCurrencyString = [NSString stringWithFormat:@"%@ %@", [lastCurrencyDictionary valueForKey:defaultCurrency], selectedCurrency];
+                                lastCurrencyString = [NSString stringWithFormat:@"%@", [lastCurrencyDictionary valueForKey:selectedCurrency]];
+                                
+                                [self saveData:kDefaultSelectedCurrency withValue:selectedCurrency];
                             }
                             
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"currencyNotification" object:nil];
                         } else {
-                            NSLog(@"");
+                            NSLog(@"currency dictionary is empty");
                         }
                     }
                         break;
                     case kDefaultCurrency: {
                         defaultCurrency = [commandMessage.messageValues valueForKey:@"defaultCurrency"];
+                        [self saveData:kDefaultUsedCurrency withValue:defaultCurrency];
                     }
                         break;
                     case kTransaction: {
@@ -162,9 +164,13 @@ static CommonData *sharedData = nil;
 
 - (void)initModule {
     defaultCurrency = @"USD";
+    selectedCurrency = [self loadData:kDefaultSelectedCurrency];
     if (selectedCurrency == nil || [selectedCurrency isEqualToString:@""]) {
         selectedCurrency = defaultCurrency;
+        [self saveData:kDefaultSelectedCurrency withValue:selectedCurrency];
     }
+    
+    lastCurrencyDictionary = [self loadData:kCurrencyData];
 }
 
 - (NSString *)getBTCString:(NSNumber *)amount {
@@ -177,57 +183,50 @@ static CommonData *sharedData = nil;
     [wormhole passMessageObject:message identifier:queueName];
 }
 
-- (void)saveData:(SaveType)kSaveType withValue:(NSString *)value {
-    switch (kSaveType) {
-        case kBalanceData:
-            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kBalanceData]];
-            break;
-        case kDenomination:
-            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kDenomination]];
-            break;
-        case kCurrencyData:
-            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kCurrencyData]];
-            break;
-        case kQRData:
-            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kQRData]];
-            break;
-        case kWalletId:
-            [userDefaults setValue:value forKey:[NSString stringWithFormat:@"%d", kWalletId]];
-            break;
-        default:
-            break;
+- (void)saveData:(SaveType)kSaveType withValue:(id)value {
+    NSString *saveKey = [NSString stringWithFormat:@"%d", kSaveType];
+    [userDefaults setObject:value forKey:saveKey];
+    
+    if (kSaveType == kCurrencyData) {
+        NSDate *currentDate = [NSDate date];
+
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MMM dd h:mm a"];
+        NSString *dateString = [dateFormatter stringFromDate:currentDate];
+
+        [userDefaults setObject:dateString forKey:[NSString stringWithFormat:@"%d", kLastCurrencyDate]];
     }
+    
     [userDefaults synchronize];
 }
 
-- (NSString *)loadData:(SaveType)kSaveType {
-    switch (kSaveType) {
-        case kBalanceData:
-            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kBalanceData]];
-            break;
-        case kDenomination:
-            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kDenomination]];
-            break;
-        case kCurrencyData:
-            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kCurrencyData]];
-            break;
-        case kQRData:
-            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kQRData]];
-            break;
-        case kWalletId:
-            return [userDefaults valueForKey:[NSString stringWithFormat:@"%d", kWalletId]];
-            break;
-        default:
-            break;
-    }
-    return @"";
+- (id)loadData:(SaveType)kSaveType {
+    NSString *loadKey = [NSString stringWithFormat:@"%d", kSaveType];
+    return [userDefaults objectForKey:loadKey];
 }
 
 - (NSString *)getBalaneString {
+    if (lastBalanceString == nil || lastBalanceString.length == 0) {
+        NSString *balance = [self loadData:kBalanceData];
+        NSString *denomination = [self loadData:kDenomination];
+        
+        if (balance != nil && denomination != nil) {
+            lastBalanceString = [NSString stringWithFormat:@"%@ %@", balance, denomination];
+        } else {
+            return nil;
+        }
+    }
+    
     return lastBalanceString;
 }
 
 - (NSString *)getCurrencyString {
+    if (lastCurrencyString == nil) {
+        NSString *priceValue = [self getCurrencyPriceBySymbol:selectedCurrency];
+        if (priceValue != nil) {
+            lastCurrencyString = [NSString stringWithFormat:@"%@ %@", priceValue, selectedCurrency];
+        }
+    }
     return lastCurrencyString;
 }
 
@@ -235,22 +234,20 @@ static CommonData *sharedData = nil;
     if ([lastCurrencyDictionary.allKeys containsObject:symbol]) {
         id currencyValue = [lastCurrencyDictionary valueForKey:symbol];
         if ([currencyValue isKindOfClass:[NSNumber class]]) {
-            lastCurrencyString = [currencyValue stringValue];
+            return [currencyValue stringValue];
         } else {
-            lastCurrencyString = (NSString *)currencyValue;
-        }
-        return lastCurrencyString;
-    } else {
-        if (lastCurrencyString != nil) {
-            return lastCurrencyString;
-        } else {
-            return @"";
+            return (NSString *)currencyValue;
         }
     }
+    return nil;
 }
 
 - (NSString *)getSelectedCurrency {
     if (selectedCurrency == nil || [selectedCurrency isEqualToString:@""]) {
+        selectedCurrency = defaultCurrency;
+        
+        [self saveData:kDefaultSelectedCurrency withValue:selectedCurrency];
+        
         return defaultCurrency;
     } else {
         return selectedCurrency;
@@ -259,6 +256,7 @@ static CommonData *sharedData = nil;
 
 - (void)setSelectedCurrency:(NSString *)currency {
     selectedCurrency = currency;
+    [self saveData:kDefaultSelectedCurrency withValue:currency];
 }
 
 - (NSArray *)getCurrencyList {
@@ -283,6 +281,10 @@ static CommonData *sharedData = nil;
 
 - (NSString *)getSelectedWalletId {
     return selectedWalletId;
+}
+
+- (NSString *)getFullCurrencyInfo {
+    return [NSString stringWithFormat:@"%@ %@", [self getCurrencyPriceBySymbol:selectedCurrency], selectedCurrency];
 }
 
 @end

@@ -24,7 +24,7 @@ typedef enum CommandName: NSInteger {
 @interface CommandMessage : NSObject
 
 @property CommandName command;
-@property (weak, nonatomic) NSDictionary *messageValues;
+@property (strong, nonatomic) NSDictionary *messageValues;
 
 - (id)initWithDictionary:(NSDictionary *)commandDictionary;
 
