@@ -27,7 +27,7 @@
     NSString *selectedWallet = [[CommonData shaderData] getSelectedWalletId];
     
     if (![selectedWallet isEqualToString:savedWalletId]) {
-        [[CommonData shaderData] sendMessage:@"showQrCode" queue:@"requestCommandQueue"];
+        [[CommonData shaderData] sendMessage:@"getQrCode" queue:@"requestCommandQueue"];
     } else {
         NSData *imgData = [[NSData alloc] initWithBase64EncodedString:savedQr options:0];
         UIImage *imgQr = [UIImage imageWithData:imgData];
