@@ -13,6 +13,7 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *currencyLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *lastDateCurrency;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *glanceImage;
 
 @end
 
