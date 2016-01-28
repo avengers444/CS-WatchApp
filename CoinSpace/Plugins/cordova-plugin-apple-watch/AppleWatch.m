@@ -20,7 +20,7 @@
 
 - (void) init:(CDVInvokedUrlCommand*)command;
 {
-    __block CDVPluginResult* pluginResult = nil;
+    CDVPluginResult* pluginResult = nil;
 
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
     NSString *appGroupId = [args objectForKey:@"appGroupId"];
@@ -29,19 +29,16 @@
     {
         appGroupId = [NSString stringWithFormat:@"group.%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]];
     }
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        self.watchConnectivityListeningWormhole = [MMWormholeSession sharedListeningSession];
-        
-        [self.watchConnectivityListeningWormhole activateSessionListening];
-        
-        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:appGroupId optionalDirectory:nil transitingType:MMWormholeTransitingTypeSessionContext];
-        
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:appGroupId];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-        });
-    });
+
+    self.watchConnectivityListeningWormhole = [MMWormholeSession sharedListeningSession];
+
+    [self.watchConnectivityListeningWormhole activateSessionListening];
+
+    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:appGroupId optionalDirectory:nil transitingType:MMWormholeTransitingTypeSessionContext];
+
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:appGroupId];
+
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) registerNotifications:(CDVInvokedUrlCommand*)command;
