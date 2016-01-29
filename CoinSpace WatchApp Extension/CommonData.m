@@ -62,6 +62,9 @@ static CommonData *sharedData = nil;
                         
                         lastBalanceString = [NSString stringWithFormat:@"%@ %@", [self getBTCString:balance], denomination];
                         
+                        //request transaction after receive balance update
+                        [self sendMessage:@"transactionMessage" queue:@"requestCommandQueue"];
+                        
                         [[NSNotificationCenter defaultCenter] postNotificationName:@"balanceNotification" object:nil];
                     }
                         break;

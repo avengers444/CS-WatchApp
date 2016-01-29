@@ -109,6 +109,10 @@ static NSString *priceSelectionSegue = @"priceSelectionSegue";
     [[CommonData shaderData] sendMessage:@"updatePrice" queue:@"requestCommandQueue"];
 }
 
+- (void)requestTransactions {
+    [[CommonData shaderData] sendMessage:@"transactionMessage" queue:@"requestCommandQueue"];
+}
+
 @end
 
 
