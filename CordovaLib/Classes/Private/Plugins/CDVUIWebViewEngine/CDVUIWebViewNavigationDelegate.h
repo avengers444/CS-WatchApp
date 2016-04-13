@@ -17,17 +17,13 @@
  under the License.
  */
 
-//
-//  AppDelegate.h
-//  CoinSpace
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "CDVUIWebViewEngine.h"
 
-#import <Cordova/CDVViewController.h>
-#import <Cordova/CDVAppDelegate.h>
+@interface CDVUIWebViewNavigationDelegate : NSObject <UIWebViewDelegate>
 
-@interface AppDelegate : CDVAppDelegate {}
+@property (nonatomic, weak) CDVPlugin* enginePlugin;
+
+- (instancetype)initWithEnginePlugin:(CDVPlugin*)enginePlugin;
 
 @end

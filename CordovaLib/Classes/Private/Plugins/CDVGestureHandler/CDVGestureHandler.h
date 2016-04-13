@@ -17,17 +17,10 @@
  under the License.
  */
 
-//
-//  AppDelegate.h
-//  CoinSpace
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import "CDVPlugin.h"
 
-#import <Cordova/CDVViewController.h>
-#import <Cordova/CDVAppDelegate.h>
+@interface CDVGestureHandler : CDVPlugin
 
-@interface AppDelegate : CDVAppDelegate {}
+@property (nonatomic, strong) UILongPressGestureRecognizer* lpgr;
 
 @end
