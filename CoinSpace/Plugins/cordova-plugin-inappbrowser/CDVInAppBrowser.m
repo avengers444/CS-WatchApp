@@ -390,7 +390,14 @@
             [self.commandDelegate sendPluginResult:pluginResult callbackId:scriptCallbackId];
             return NO;
         }
-    } else if ((self.callbackId != nil) && isTopLevelNavigation) {
+    } 
+    //if is an app store link, let the system handle it, otherwise it fails to load it
+    else if ([[ url scheme] isEqualToString:@"itms-appss"] || [[ url scheme] isEqualToString:@"itms-apps"]) {
+        [theWebView stopLoading];
+        [self openInSystem:url];
+        return NO;
+    }
+    else if ((self.callbackId != nil) && isTopLevelNavigation) {
         // Send a loadstart event for each top-level navigation (includes redirects).
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                                                       messageAsDictionary:@{@"type":@"loadstart", @"url":[url absoluteString]}];
@@ -748,6 +755,10 @@
     return UIStatusBarStyleDefault;
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
 - (void)close
 {
     [CDVUserAgentUtil releaseLock:&_userAgentLockToken];
@@ -993,13 +1004,26 @@
 
     // simplified from: http://stackoverflow.com/a/25669695/219684
 
-    UIToolbar* bgToolbar = [[UIToolbar alloc] initWithFrame:frame];
+    UIToolbar* bgToolbar = [[UIToolbar alloc] initWithFrame:[self invertFrameIfNeeded:frame]];
     bgToolbar.barStyle = UIBarStyleDefault;
+    [bgToolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [self.view addSubview:bgToolbar];
 
     [super viewDidLoad];
 }
 
+- (CGRect) invertFrameIfNeeded:(CGRect)rect {
+    // We need to invert since on iOS 7 frames are always in Portrait context
+    if (!IsAtLeastiOSVersion(@"8.0")) {
+        if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+            CGFloat temp = rect.size.width;
+            rect.size.width = rect.size.height;
+            rect.size.height = temp;
+            rect.origin = CGPointZero;
+        }
+    }
+    return rect;
+}
 
 #pragma mark CDVScreenOrientationDelegate
 
