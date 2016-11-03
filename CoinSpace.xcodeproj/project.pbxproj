@@ -88,6 +88,16 @@
 		E703AE4B67CE4AAFB7D59482 /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF04DB06CA4640A1151344 /* MMWormholeSessionMessageTransiting.m */; };
 		EEC2B324FA0245979B591750 /* MMWormholeSessionFileTransiting.h in Sources */ = {isa = PBXBuildFile; fileRef = DAB0617F4DCE45AE8585192B /* MMWormholeSessionFileTransiting.h */; };
 		F569AF46D96A4342B630DB82 /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A80DDB8197402C8B55DB83 /* TouchID.m */; };
+		1934AB28C2F4457BB09FFB4A /* CDVPluginExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B86768E8C943A98DB2D116 /* CDVPluginExt.m */; };
+		1BC28E18FF03464F8D418667 /* libCordovaGenericAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA897E59ECC54EC385C7114A /* libCordovaGenericAd.a */; };
+		E87AE07A6C6843ECB3425E80 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB33087211F4C09A02739D9 /* CFNetwork.framework */; };
+		33F0431A647D4A82AA3CD067 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2152AE63570546E1988A324F /* FBAudienceNetwork.framework */; };
+		B4BF0048B6C94C38A9B22090 /* FacebookAdPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC8A6C63ED447CDB145E776 /* FacebookAdPlugin.m */; };
+		DC236217233D46B38E318E0C /* UITapGestureRecognizer+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CC9BA54454D36B02D7772 /* UITapGestureRecognizer+Spec.m */; };
+		5A88A92B4EB14736B49B997A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164DD0A2876D45E59828A316 /* AdSupport.framework */; };
+		1E1AE5A25FBC4F42ADAFB0F9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A030DFB06934D2FBB8C9F2C /* StoreKit.framework */; };
+		F7D0C04085E64D86B811CA3F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C981689B2F3C48A48E63FCE2 /* CoreMotion.framework */; };
+		98710B22FAFE4AB6BE5C17AB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00631CCE74F1467DB141EFAD /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,6 +279,21 @@
 		F4BFC62B9F4B4D27BBBE44B1 /* CDVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
 		F5BAB6696F414C04BAC5F8CF /* Social.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = CoinSpace/config.xml; sourceTree = "<group>"; };
+		73B86768E8C943A98DB2D116 /* CDVPluginExt.m */ = {isa = PBXFileReference; name = "CDVPluginExt.m"; path = "cordova-plugin-extension/CDVPluginExt.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		BA897E59ECC54EC385C7114A /* libCordovaGenericAd.a */ = {isa = PBXFileReference; name = "libCordovaGenericAd.a"; path = "CoinSpace/Plugins/cordova-plugin-extension/libCordovaGenericAd.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		B153D23539CC43D4A8C195FC /* PluginAdapterDelegate.h */ = {isa = PBXFileReference; name = "PluginAdapterDelegate.h"; path = "cordova-plugin-extension/PluginAdapterDelegate.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		A0C0F2A7516F4E5BA8B1B001 /* CDVPluginExt.h */ = {isa = PBXFileReference; name = "CDVPluginExt.h"; path = "cordova-plugin-extension/CDVPluginExt.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		60A9056FB0EC404B97DBC2E0 /* GenericAdPlugin.h */ = {isa = PBXFileReference; name = "GenericAdPlugin.h"; path = "cordova-plugin-extension/GenericAdPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		8DB33087211F4C09A02739D9 /* CFNetwork.framework */ = {isa = PBXFileReference; name = "CFNetwork.framework"; path = "System/Library/Frameworks/CFNetwork.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		2152AE63570546E1988A324F /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; name = "FBAudienceNetwork.framework"; path = "CoinSpace/Plugins/cordova-facebook-audnet-sdk/FBAudienceNetwork.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		BAC8A6C63ED447CDB145E776 /* FacebookAdPlugin.m */ = {isa = PBXFileReference; name = "FacebookAdPlugin.m"; path = "cordova-plugin-facebookads/FacebookAdPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		529CC9BA54454D36B02D7772 /* UITapGestureRecognizer+Spec.m */ = {isa = PBXFileReference; name = "UITapGestureRecognizer+Spec.m"; path = "cordova-plugin-facebookads/UITapGestureRecognizer+Spec.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		971FD907DD604B9DAE48135D /* FacebookAdPlugin.h */ = {isa = PBXFileReference; name = "FacebookAdPlugin.h"; path = "cordova-plugin-facebookads/FacebookAdPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		8760043F09194FC3A912676B /* UITapGestureRecognizer+Spec.h */ = {isa = PBXFileReference; name = "UITapGestureRecognizer+Spec.h"; path = "cordova-plugin-facebookads/UITapGestureRecognizer+Spec.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		164DD0A2876D45E59828A316 /* AdSupport.framework */ = {isa = PBXFileReference; name = "AdSupport.framework"; path = "System/Library/Frameworks/AdSupport.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		4A030DFB06934D2FBB8C9F2C /* StoreKit.framework */ = {isa = PBXFileReference; name = "StoreKit.framework"; path = "System/Library/Frameworks/StoreKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		C981689B2F3C48A48E63FCE2 /* CoreMotion.framework */ = {isa = PBXFileReference; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		00631CCE74F1467DB141EFAD /* OpenGLES.framework */ = {isa = PBXFileReference; name = "OpenGLES.framework"; path = "System/Library/Frameworks/OpenGLES.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +318,13 @@
 				0428413670DA40FABF8D797D /* MessageUI.framework in Frameworks */,
 				8F392325AEB0487FA2FFB91D /* LocalAuthentication.framework in Frameworks */,
 				46ADE2C3994C4AA1B9C27748 /* Security.framework in Frameworks */,
+				1BC28E18FF03464F8D418667 /* libCordovaGenericAd.a in Frameworks */,
+				E87AE07A6C6843ECB3425E80 /* CFNetwork.framework in Frameworks */,
+				33F0431A647D4A82AA3CD067 /* FBAudienceNetwork.framework in Frameworks */,
+				5A88A92B4EB14736B49B997A /* AdSupport.framework in Frameworks */,
+				1E1AE5A25FBC4F42ADAFB0F9 /* StoreKit.framework in Frameworks */,
+				F7D0C04085E64D86B811CA3F /* CoreMotion.framework in Frameworks */,
+				98710B22FAFE4AB6BE5C17AB /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +426,13 @@
 				E713E8256C87406BB7E09AF3 /* MessageUI.framework */,
 				7D2D02930BDD4EBF97E3B66B /* LocalAuthentication.framework */,
 				7BA381A1817945DB8D26C3D1 /* Security.framework */,
+				BA897E59ECC54EC385C7114A /* libCordovaGenericAd.a */,
+				8DB33087211F4C09A02739D9 /* CFNetwork.framework */,
+				2152AE63570546E1988A324F /* FBAudienceNetwork.framework */,
+				164DD0A2876D45E59828A316 /* AdSupport.framework */,
+				4A030DFB06934D2FBB8C9F2C /* StoreKit.framework */,
+				C981689B2F3C48A48E63FCE2 /* CoreMotion.framework */,
+				00631CCE74F1467DB141EFAD /* OpenGLES.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -459,6 +498,14 @@
 				324BB8050DCD415B848D377E /* TouchID.h */,
 				B6D6918E71074EF396A6C765 /* CDVLogger.m */,
 				F4BFC62B9F4B4D27BBBE44B1 /* CDVLogger.h */,
+				73B86768E8C943A98DB2D116 /* CDVPluginExt.m */,
+				B153D23539CC43D4A8C195FC /* PluginAdapterDelegate.h */,
+				A0C0F2A7516F4E5BA8B1B001 /* CDVPluginExt.h */,
+				60A9056FB0EC404B97DBC2E0 /* GenericAdPlugin.h */,
+				BAC8A6C63ED447CDB145E776 /* FacebookAdPlugin.m */,
+				529CC9BA54454D36B02D7772 /* UITapGestureRecognizer+Spec.m */,
+				971FD907DD604B9DAE48135D /* FacebookAdPlugin.h */,
+				8760043F09194FC3A912676B /* UITapGestureRecognizer+Spec.h */,
 			);
 			name = Plugins;
 			path = CoinSpace/Plugins;
@@ -891,6 +938,9 @@
 				078D733364F44E0C8D69D3F1 /* SocialSharing.m in Sources */,
 				F569AF46D96A4342B630DB82 /* TouchID.m in Sources */,
 				82A73008AE214FC8BCF162CF /* CDVLogger.m in Sources */,
+				1934AB28C2F4457BB09FFB4A /* CDVPluginExt.m in Sources */,
+				B4BF0048B6C94C38A9B22090 /* FacebookAdPlugin.m in Sources */,
+				DC236217233D46B38E318E0C /* UITapGestureRecognizer+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,6 +1039,14 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = CoinSpace;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CoinSpace/Plugins/cordova-plugin-extension\"",
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"CoinSpace/Plugins/cordova-facebook-audnet-sdk\"",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1024,6 +1082,14 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = CoinSpace;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CoinSpace/Plugins/cordova-plugin-extension\"",
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"CoinSpace/Plugins/cordova-facebook-audnet-sdk\"",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
